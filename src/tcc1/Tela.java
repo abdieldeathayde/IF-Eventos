@@ -46,7 +46,7 @@ public class Tela extends JFrame {
 	public Tela() {
 		setTitle("IFSC-Eventos");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 500, 690);
+		setBounds(100, 100, 800, 800);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(255, 255, 255));
 		contentPane.setForeground(Color.WHITE);
@@ -63,23 +63,14 @@ public class Tela extends JFrame {
 		JLabel divisorLabel2 = new JLabel("");
 		divisorLabel2.setIcon(new ImageIcon("C:\\Users\\Athay\\Downloads\\Line 6.png"));
 		
-		JLabel seta3Label_1_1 = new JLabel("");
-		seta3Label_1_1.setIcon(new ImageIcon("C:\\Users\\Athay\\Downloads\\Protótipo IFSC\\Line 1.png"));
-		
-		JLabel seta1Label_1_1 = new JLabel("");
-		seta1Label_1_1.setIcon(new ImageIcon("C:\\Users\\Athay\\Downloads\\Protótipo IFSC\\Line 1.png"));
-		
-		JLabel seta2Label_1_1 = new JLabel("");
-		seta2Label_1_1.setIcon(new ImageIcon("C:\\Users\\Athay\\Downloads\\Protótipo IFSC\\Line 2.png"));
-		
 		JButton btnNewButton_1 = new JButton("Quero me inscrver!");
 		btnNewButton_1.setBackground(Color.GREEN);
 		
 		JLabel logoNoticiasLabel = new JLabel("");
 		logoNoticiasLabel.setIcon(new ImageIcon("C:\\Users\\Athay\\Downloads\\noticia 1.png"));
 		
-		JLabel NewsLabel = new JLabel("Noticias Recentes");
-		NewsLabel.setFont(new Font("Tahoma", Font.BOLD, 10));
+		JLabel NoticiasLabel = new JLabel("Noticias Recentes");
+		NoticiasLabel.setFont(new Font("Tahoma", Font.BOLD, 10));
 		
 		JLabel cursoLabel = new JLabel("Curso ofertado");
 		cursoLabel.setFont(new Font("Tahoma", Font.BOLD, 10));
@@ -100,6 +91,10 @@ public class Tela extends JFrame {
 		InscricaoLabel2.setFont(new Font("Tahoma", Font.ITALIC, 10));
 		
 		JButton btnNewButton = new JButton("");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btnNewButton.setBackground(Color.WHITE);
 		btnNewButton.setForeground(Color.WHITE);
 		btnNewButton.setIcon(new ImageIcon("C:\\Users\\Athay\\Downloads\\user-solid (1) 6.png"));
@@ -115,29 +110,34 @@ public class Tela extends JFrame {
 		JButton btnNewButton_4 = new JButton("");
 		btnNewButton_4.setBackground(Color.WHITE);
 		btnNewButton_4.setIcon(new ImageIcon("C:\\Users\\Athay\\Downloads\\livro 3.png"));
+		
+		JButton btnNewButton_5 = new JButton("");
+		btnNewButton_5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnNewButton_5.setIcon(new ImageIcon("C:\\Users\\Athay\\OneDrive\\Documentos\\IFSC\\proejtoIntegrador\\menu (2).png"));
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-							.addGroup(gl_contentPane.createSequentialGroup()
-								.addGap(88)
-								.addComponent(logoNoticiasLabel, GroupLayout.PREFERRED_SIZE, 237, GroupLayout.PREFERRED_SIZE)
-								.addPreferredGap(ComponentPlacement.RELATED)
-								.addComponent(NewsLabel, GroupLayout.PREFERRED_SIZE, 124, GroupLayout.PREFERRED_SIZE))
-							.addGroup(gl_contentPane.createSequentialGroup()
-								.addGap(28)
-								.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-									.addComponent(divisorLabel, GroupLayout.PREFERRED_SIZE, 557, GroupLayout.PREFERRED_SIZE)
-									.addGroup(gl_contentPane.createSequentialGroup()
-										.addComponent(logoIFSCLabel, GroupLayout.PREFERRED_SIZE, 242, GroupLayout.PREFERRED_SIZE)
-										.addPreferredGap(ComponentPlacement.RELATED, 212, Short.MAX_VALUE)
-										.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-											.addComponent(seta3Label_1_1, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
-											.addComponent(seta1Label_1_1, GroupLayout.PREFERRED_SIZE, 66, GroupLayout.PREFERRED_SIZE)
-											.addComponent(seta2Label_1_1, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE))
-										.addGap(78)))))
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+								.addGroup(gl_contentPane.createSequentialGroup()
+									.addGap(88)
+									.addComponent(logoNoticiasLabel, GroupLayout.PREFERRED_SIZE, 237, GroupLayout.PREFERRED_SIZE)
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(NoticiasLabel, GroupLayout.PREFERRED_SIZE, 124, GroupLayout.PREFERRED_SIZE))
+								.addGroup(gl_contentPane.createSequentialGroup()
+									.addGap(28)
+									.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+										.addComponent(divisorLabel, GroupLayout.PREFERRED_SIZE, 557, GroupLayout.PREFERRED_SIZE)
+										.addGroup(gl_contentPane.createSequentialGroup()
+											.addComponent(logoIFSCLabel, GroupLayout.PREFERRED_SIZE, 242, GroupLayout.PREFERRED_SIZE)
+											.addPreferredGap(ComponentPlacement.RELATED, 245, Short.MAX_VALUE)
+											.addComponent(btnNewButton_5, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE)))))
+							.addPreferredGap(ComponentPlacement.RELATED))
 						.addGroup(gl_contentPane.createSequentialGroup()
 							.addGap(19)
 							.addComponent(divisorLabel2, GroupLayout.PREFERRED_SIZE, 557, GroupLayout.PREFERRED_SIZE))
@@ -145,10 +145,10 @@ public class Tela extends JFrame {
 							.addGap(97)
 							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 								.addComponent(cursoLabel)
-								.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING, false)
-									.addComponent(inscricaoLabel, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-									.addComponent(areaLabel, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 77, Short.MAX_VALUE)
-									.addGroup(Alignment.LEADING, gl_contentPane.createSequentialGroup()
+								.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING, false)
+									.addComponent(inscricaoLabel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+									.addComponent(areaLabel, GroupLayout.DEFAULT_SIZE, 77, Short.MAX_VALUE)
+									.addGroup(gl_contentPane.createSequentialGroup()
 										.addComponent(btnNewButton)
 										.addPreferredGap(ComponentPlacement.RELATED))))
 							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
@@ -174,12 +174,9 @@ public class Tela extends JFrame {
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 						.addComponent(logoIFSCLabel, GroupLayout.PREFERRED_SIZE, 78, GroupLayout.PREFERRED_SIZE)
 						.addGroup(gl_contentPane.createSequentialGroup()
-							.addComponent(seta3Label_1_1, GroupLayout.PREFERRED_SIZE, 1, GroupLayout.PREFERRED_SIZE)
 							.addGap(10)
-							.addComponent(seta1Label_1_1, GroupLayout.PREFERRED_SIZE, 1, GroupLayout.PREFERRED_SIZE)
-							.addGap(10)
-							.addComponent(seta2Label_1_1, GroupLayout.PREFERRED_SIZE, 1, GroupLayout.PREFERRED_SIZE)))
-					.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(btnNewButton_5, GroupLayout.PREFERRED_SIZE, 135, GroupLayout.PREFERRED_SIZE)))
+					.addGap(143)
 					.addComponent(divisorLabel, GroupLayout.PREFERRED_SIZE, 6, GroupLayout.PREFERRED_SIZE)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 						.addGroup(gl_contentPane.createSequentialGroup()
@@ -187,7 +184,7 @@ public class Tela extends JFrame {
 							.addComponent(logoNoticiasLabel, GroupLayout.PREFERRED_SIZE, 108, GroupLayout.PREFERRED_SIZE))
 						.addGroup(gl_contentPane.createSequentialGroup()
 							.addGap(50)
-							.addComponent(NewsLabel)))
+							.addComponent(NoticiasLabel)))
 					.addGap(30)
 					.addComponent(divisorLabel2, GroupLayout.PREFERRED_SIZE, 6, GroupLayout.PREFERRED_SIZE)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
