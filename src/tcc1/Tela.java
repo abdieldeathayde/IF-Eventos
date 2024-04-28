@@ -46,7 +46,7 @@ public class Tela extends JFrame {
 	public Tela() {
 		setTitle("IFSC-Eventos");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 800, 800);
+		setBounds(100, 100, 450, 550);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(255, 255, 255));
 		contentPane.setForeground(Color.WHITE);
@@ -57,163 +57,143 @@ public class Tela extends JFrame {
 		JLabel logoIFSCLabel = new JLabel("");
 		logoIFSCLabel.setIcon(new ImageIcon("C:\\Users\\Athay\\Downloads\\image 8.png"));
 		
-		JLabel divisorLabel = new JLabel("");
-		divisorLabel.setIcon(new ImageIcon("C:\\Users\\Athay\\Downloads\\Line 4.png"));
-		
 		JLabel divisorLabel2 = new JLabel("");
 		divisorLabel2.setIcon(new ImageIcon("C:\\Users\\Athay\\Downloads\\Line 6.png"));
 		
-		JButton btnNewButton_1 = new JButton("Quero me inscrver!");
-		btnNewButton_1.setBackground(Color.GREEN);
+		JLabel logoNoticiasLabel_1 = new JLabel("");
+		logoNoticiasLabel_1.setIcon(new ImageIcon("C:\\Users\\Athay\\Downloads\\noticia 1.png"));
 		
-		JLabel logoNoticiasLabel = new JLabel("");
-		logoNoticiasLabel.setIcon(new ImageIcon("C:\\Users\\Athay\\Downloads\\noticia 1.png"));
+		JLabel cursoLabel_1 = new JLabel("Curso ofertado");
+		cursoLabel_1.setFont(new Font("Tahoma", Font.BOLD, 10));
 		
-		JLabel NoticiasLabel = new JLabel("Noticias Recentes");
-		NoticiasLabel.setFont(new Font("Tahoma", Font.BOLD, 10));
+		JLabel areaLabel_1 = new JLabel("Área:");
+		areaLabel_1.setFont(new Font("Tahoma", Font.BOLD, 10));
 		
-		JLabel cursoLabel = new JLabel("Curso ofertado");
-		cursoLabel.setFont(new Font("Tahoma", Font.BOLD, 10));
+		JLabel cursoLabel2_1 = new JLabel("FIC Inglês");
+		cursoLabel2_1.setFont(new Font("Tahoma", Font.ITALIC, 10));
 		
-		JLabel areaLabel = new JLabel("Área:");
-		areaLabel.setFont(new Font("Tahoma", Font.BOLD, 10));
+		JLabel areaLabel2_1 = new JLabel("Qualificação Profissional");
+		areaLabel2_1.setFont(new Font("Tahoma", Font.ITALIC, 10));
 		
-		JLabel inscricaoLabel = new JLabel("Inscrições até");
-		inscricaoLabel.setFont(new Font("Tahoma", Font.BOLD, 10));
+		JLabel inscricaoLabel_1 = new JLabel("Inscrições até");
+		inscricaoLabel_1.setFont(new Font("Tahoma", Font.BOLD, 10));
 		
-		JLabel cursoLabel2 = new JLabel("FIC Inglês");
-		cursoLabel2.setFont(new Font("Tahoma", Font.ITALIC, 10));
+		JLabel InscricaoLabel2_1 = new JLabel("08/03/2024");
+		InscricaoLabel2_1.setFont(new Font("Tahoma", Font.ITALIC, 10));
 		
-		JLabel areaLabel2 = new JLabel("Qualificação Profissional");
-		areaLabel2.setFont(new Font("Tahoma", Font.ITALIC, 10));
+		JButton btnNewButton_1_1 = new JButton("Quero me inscrver!");
+		btnNewButton_1_1.setBackground(Color.GREEN);
 		
-		JLabel InscricaoLabel2 = new JLabel("08/03/2024");
-		InscricaoLabel2.setFont(new Font("Tahoma", Font.ITALIC, 10));
-		
-		JButton btnNewButton = new JButton("");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		btnNewButton.setBackground(Color.WHITE);
-		btnNewButton.setForeground(Color.WHITE);
-		btnNewButton.setIcon(new ImageIcon("C:\\Users\\Athay\\Downloads\\user-solid (1) 6.png"));
-		
-		JButton btnNewButton_2 = new JButton("");
-		btnNewButton_2.setBackground(Color.WHITE);
-		btnNewButton_2.setIcon(new ImageIcon("C:\\Users\\Athay\\Downloads\\Vector.png"));
-		
-		JButton btnNewButton_3 = new JButton("");
-		btnNewButton_3.setBackground(Color.WHITE);
-		btnNewButton_3.setIcon(new ImageIcon("C:\\Users\\Athay\\Downloads\\circle-info-solid (1) 5.png"));
-		
-		JButton btnNewButton_4 = new JButton("");
-		btnNewButton_4.setBackground(Color.WHITE);
-		btnNewButton_4.setIcon(new ImageIcon("C:\\Users\\Athay\\Downloads\\livro 3.png"));
+		JButton btnNewButton_5_2 = new JButton("");
+		btnNewButton_5_2.setIcon(new ImageIcon("C:\\Users\\Athay\\Downloads\\user-solid (1) 6.png"));
+		btnNewButton_5_2.setForeground(Color.WHITE);
+		btnNewButton_5_2.setBackground(Color.WHITE);
 		
 		JButton btnNewButton_5 = new JButton("");
-		btnNewButton_5.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		btnNewButton_5.setIcon(new ImageIcon("C:\\Users\\Athay\\OneDrive\\Documentos\\IFSC\\proejtoIntegrador\\menu (2).png"));
+		btnNewButton_5.setIcon(new ImageIcon("C:\\Users\\Athay\\Downloads\\Vector.png"));
+		btnNewButton_5.setForeground(Color.WHITE);
+		btnNewButton_5.setBackground(Color.WHITE);
+		
+		JButton btnNewButton_7_1 = new JButton("");
+		btnNewButton_7_1.setIcon(new ImageIcon("C:\\Users\\Athay\\Downloads\\circle-info-solid (1) 5.png"));
+		btnNewButton_7_1.setForeground(Color.WHITE);
+		btnNewButton_7_1.setBackground(Color.WHITE);
+		
+		JButton btnNewButton_4_1_1 = new JButton("");
+		btnNewButton_4_1_1.setIcon(new ImageIcon("C:\\Users\\Athay\\Downloads\\livro 3.png"));
+		btnNewButton_4_1_1.setBackground(Color.WHITE);
+		
+		JLabel NoticiasLabel_1 = new JLabel("Noticias Recentes");
+		NoticiasLabel_1.setFont(new Font("Tahoma", Font.BOLD, 14));
+		
+		JButton btnNewButton_5_1_1 = new JButton("");
+		btnNewButton_5_1_1.setIcon(new ImageIcon("C:\\Users\\Athay\\OneDrive\\Documentos\\IFSC\\proejtoIntegrador\\menu3.png"));
+		btnNewButton_5_1_1.setBackground(Color.WHITE);
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGap(128)
+							.addComponent(btnNewButton_1_1, GroupLayout.PREFERRED_SIZE, 145, GroupLayout.PREFERRED_SIZE))
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGap(78)
+							.addComponent(btnNewButton_5_2, GroupLayout.PREFERRED_SIZE, 53, GroupLayout.PREFERRED_SIZE)
+							.addGap(18)
+							.addComponent(btnNewButton_5, GroupLayout.PREFERRED_SIZE, 53, GroupLayout.PREFERRED_SIZE)
+							.addGap(18)
+							.addComponent(btnNewButton_7_1, GroupLayout.PREFERRED_SIZE, 53, GroupLayout.PREFERRED_SIZE)
+							.addGap(18)
+							.addComponent(btnNewButton_4_1_1, GroupLayout.PREFERRED_SIZE, 65, GroupLayout.PREFERRED_SIZE))
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGap(69)
 							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 								.addGroup(gl_contentPane.createSequentialGroup()
-									.addGap(88)
-									.addComponent(logoNoticiasLabel, GroupLayout.PREFERRED_SIZE, 237, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.RELATED)
-									.addComponent(NoticiasLabel, GroupLayout.PREFERRED_SIZE, 124, GroupLayout.PREFERRED_SIZE))
-								.addGroup(gl_contentPane.createSequentialGroup()
-									.addGap(28)
 									.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-										.addComponent(divisorLabel, GroupLayout.PREFERRED_SIZE, 557, GroupLayout.PREFERRED_SIZE)
+										.addGroup(gl_contentPane.createSequentialGroup()
+											.addComponent(logoNoticiasLabel_1, GroupLayout.PREFERRED_SIZE, 200, GroupLayout.PREFERRED_SIZE)
+											.addPreferredGap(ComponentPlacement.RELATED)
+											.addComponent(NoticiasLabel_1, GroupLayout.PREFERRED_SIZE, 130, GroupLayout.PREFERRED_SIZE))
 										.addGroup(gl_contentPane.createSequentialGroup()
 											.addComponent(logoIFSCLabel, GroupLayout.PREFERRED_SIZE, 242, GroupLayout.PREFERRED_SIZE)
-											.addPreferredGap(ComponentPlacement.RELATED, 245, Short.MAX_VALUE)
-											.addComponent(btnNewButton_5, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE)))))
-							.addPreferredGap(ComponentPlacement.RELATED))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(19)
-							.addComponent(divisorLabel2, GroupLayout.PREFERRED_SIZE, 557, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(97)
-							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-								.addComponent(cursoLabel)
-								.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING, false)
-									.addComponent(inscricaoLabel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-									.addComponent(areaLabel, GroupLayout.DEFAULT_SIZE, 77, Short.MAX_VALUE)
-									.addGroup(gl_contentPane.createSequentialGroup()
-										.addComponent(btnNewButton)
-										.addPreferredGap(ComponentPlacement.RELATED))))
-							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+											.addGap(12)
+											.addComponent(btnNewButton_5_1_1, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE)))
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(divisorLabel2, GroupLayout.PREFERRED_SIZE, 557, GroupLayout.PREFERRED_SIZE))
 								.addGroup(gl_contentPane.createSequentialGroup()
-									.addGap(183)
 									.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-										.addComponent(InscricaoLabel2, GroupLayout.PREFERRED_SIZE, 85, GroupLayout.PREFERRED_SIZE)
-										.addComponent(cursoLabel2, GroupLayout.PREFERRED_SIZE, 80, GroupLayout.PREFERRED_SIZE)
-										.addComponent(areaLabel2, GroupLayout.PREFERRED_SIZE, 129, GroupLayout.PREFERRED_SIZE)))
-								.addComponent(btnNewButton_1, GroupLayout.PREFERRED_SIZE, 145, GroupLayout.PREFERRED_SIZE)
-								.addGroup(gl_contentPane.createSequentialGroup()
-									.addComponent(btnNewButton_2)
-									.addGap(29)
-									.addComponent(btnNewButton_3)
-									.addGap(39)
-									.addComponent(btnNewButton_4)))
-							.addGap(91)))
-					.addContainerGap(904, Short.MAX_VALUE))
+										.addComponent(cursoLabel_1, GroupLayout.PREFERRED_SIZE, 78, GroupLayout.PREFERRED_SIZE)
+										.addComponent(areaLabel_1, GroupLayout.PREFERRED_SIZE, 77, GroupLayout.PREFERRED_SIZE)
+										.addComponent(inscricaoLabel_1, GroupLayout.PREFERRED_SIZE, 77, GroupLayout.PREFERRED_SIZE))
+									.addGap(69)
+									.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+										.addComponent(InscricaoLabel2_1, GroupLayout.PREFERRED_SIZE, 85, GroupLayout.PREFERRED_SIZE)
+										.addComponent(areaLabel2_1, GroupLayout.PREFERRED_SIZE, 129, GroupLayout.PREFERRED_SIZE)
+										.addComponent(cursoLabel2_1, GroupLayout.PREFERRED_SIZE, 80, GroupLayout.PREFERRED_SIZE))))))
+					.addContainerGap(562, Short.MAX_VALUE))
 		);
 		gl_contentPane.setVerticalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPane.createSequentialGroup()
+				.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 						.addComponent(logoIFSCLabel, GroupLayout.PREFERRED_SIZE, 78, GroupLayout.PREFERRED_SIZE)
 						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(10)
-							.addComponent(btnNewButton_5, GroupLayout.PREFERRED_SIZE, 135, GroupLayout.PREFERRED_SIZE)))
-					.addGap(143)
-					.addComponent(divisorLabel, GroupLayout.PREFERRED_SIZE, 6, GroupLayout.PREFERRED_SIZE)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(18)
-							.addComponent(logoNoticiasLabel, GroupLayout.PREFERRED_SIZE, 108, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(50)
-							.addComponent(NoticiasLabel)))
-					.addGap(30)
-					.addComponent(divisorLabel2, GroupLayout.PREFERRED_SIZE, 6, GroupLayout.PREFERRED_SIZE)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(18)
-							.addComponent(cursoLabel))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(20)
-							.addComponent(cursoLabel2)))
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(14)
-							.addComponent(areaLabel, GroupLayout.PREFERRED_SIZE, 13, GroupLayout.PREFERRED_SIZE)
-							.addGap(18)
-							.addComponent(inscricaoLabel))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(18)
-							.addComponent(areaLabel2)
-							.addPreferredGap(ComponentPlacement.UNRELATED)
-							.addComponent(InscricaoLabel2)))
-					.addGap(19)
-					.addComponent(btnNewButton_1)
-					.addGap(127)
+							.addContainerGap()
+							.addComponent(btnNewButton_5_1_1, GroupLayout.PREFERRED_SIZE, 64, GroupLayout.PREFERRED_SIZE)))
+					.addPreferredGap(ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
-						.addComponent(btnNewButton)
-						.addComponent(btnNewButton_2)
-						.addComponent(btnNewButton_3)
-						.addComponent(btnNewButton_4))
-					.addGap(304))
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addComponent(NoticiasLabel_1, GroupLayout.PREFERRED_SIZE, 17, GroupLayout.PREFERRED_SIZE)
+							.addGap(52)
+							.addComponent(divisorLabel2, GroupLayout.PREFERRED_SIZE, 6, GroupLayout.PREFERRED_SIZE))
+						.addComponent(logoNoticiasLabel_1, GroupLayout.PREFERRED_SIZE, 108, GroupLayout.PREFERRED_SIZE))
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGap(43)
+							.addComponent(cursoLabel_1)
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addComponent(areaLabel_1)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(inscricaoLabel_1))
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGap(35)
+							.addComponent(cursoLabel2_1)
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addComponent(areaLabel2_1)
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addComponent(InscricaoLabel2_1)))
+					.addGap(42)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addComponent(btnNewButton_1_1)
+							.addGap(91)
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+								.addComponent(btnNewButton_5_2, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE)
+								.addComponent(btnNewButton_5, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE)
+								.addComponent(btnNewButton_7_1, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE)))
+						.addComponent(btnNewButton_4_1_1, GroupLayout.PREFERRED_SIZE, 59, GroupLayout.PREFERRED_SIZE))
+					.addGap(288))
 		);
 		contentPane.setLayout(gl_contentPane);
 		
