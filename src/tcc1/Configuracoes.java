@@ -12,9 +12,12 @@ import javax.swing.ImageIcon;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.net.URL;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Image;
+import java.awt.Toolkit;
 
 public class Configuracoes extends Tela {
 
@@ -30,6 +33,15 @@ public class Configuracoes extends Tela {
 			public void run() {
 				try {
 					Configuracoes frame = new Configuracoes();
+					URL caminhoImagem = this.getClass().getResource("IfscLogo.png");
+					Image iconeTitulo = Toolkit.getDefaultToolkit().getImage(caminhoImagem);
+					
+					frame.setIconImage(iconeTitulo);
+					
+					
+
+					// ("C:Users/Athay/OneDrive/Imagens/Capturas de tela/Ifsc.png");
+					frame.setTitle("IFSC-Eventos");
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -67,7 +79,7 @@ public class Configuracoes extends Tela {
 		LabelNomeCurso.setFont(new Font("Tahoma", Font.ITALIC, 14));
 		
 		JLabel LabelIFSCLogo = new JLabel("");
-		LabelIFSCLogo.setIcon(new ImageIcon("C:\\Users\\Athay\\OneDrive\\Imagens\\Capturas de tela\\Ifsc.png"));
+		LabelIFSCLogo.setIcon(new ImageIcon(Configuracoes.class.getResource("/tcc1/image 8.png")));
 		
 		JLabel LabelNumeroMatricula = new JLabel("201710005168");
 		LabelNumeroMatricula.setFont(new Font("Tahoma", Font.ITALIC, 14));
@@ -140,20 +152,24 @@ public class Configuracoes extends Tela {
 		
 		JButton ButtonUsuario = new JButton("");
 		ButtonUsuario.setBackground(Color.WHITE);
-		ButtonUsuario.setIcon(new ImageIcon("C:\\Users\\Athay\\Downloads\\user-solid (1) 6.png"));
+		ButtonUsuario.setIcon(new ImageIcon(Configuracoes.class.getResource("/tcc1/user-solid (1) 6.png")));
 		
 		JButton ButtonConfiguracoes = new JButton("");
+		ButtonConfiguracoes.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		ButtonConfiguracoes.setBackground(Color.WHITE);
-		ButtonConfiguracoes.setIcon(new ImageIcon("C:\\Users\\Athay\\Downloads\\Vector.png"));
+		ButtonConfiguracoes.setIcon(new ImageIcon(Configuracoes.class.getResource("/tcc1/Vector.png")));
 		
 		JButton ButtonInformacoes = new JButton("");
 		ButtonInformacoes.setBackground(Color.WHITE);
-		ButtonInformacoes.setIcon(new ImageIcon("C:\\Users\\Athay\\Downloads\\circle-info-solid (1) 5.png"));
+		ButtonInformacoes.setIcon(new ImageIcon(Configuracoes.class.getResource("/tcc1/circle-info-solid (1) 5.png")));
 		
 		JButton ButtonAreaEstudante = new JButton("");
 		ButtonAreaEstudante.setBackground(Color.WHITE);
 		ButtonAreaEstudante.setForeground(Color.WHITE);
-		ButtonAreaEstudante.setIcon(new ImageIcon("C:\\Users\\Athay\\Downloads\\livro 3.png"));
+		ButtonAreaEstudante.setIcon(new ImageIcon(Configuracoes.class.getResource("/tcc1/livro 3.png")));
 		
 		JLabel LabelDivisor = new JLabel("");
 		LabelDivisor.setIcon(new ImageIcon("C:\\Users\\Athay\\Downloads\\Line 6.png"));
@@ -170,7 +186,7 @@ public class Configuracoes extends Tela {
 		LabelDivisor_2.setIcon(new ImageIcon("C:\\Users\\Athay\\Downloads\\Line 6.png"));
 		
 		JButton ButtonMenu = new JButton("");
-		ButtonMenu.setIcon(new ImageIcon("C:\\Users\\Athay\\OneDrive\\Documentos\\IFSC\\proejtoIntegrador\\menu (2).png"));
+		ButtonMenu.setIcon(new ImageIcon(Configuracoes.class.getResource("/tcc1/menu4.png")));
 		ButtonMenu.setBackground(Color.WHITE);
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(

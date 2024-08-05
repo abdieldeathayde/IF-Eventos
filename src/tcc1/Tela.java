@@ -13,11 +13,14 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 import java.awt.Color;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.net.URL;
 import java.awt.event.ActionEvent;
 import javax.swing.SwingConstants;
 import javax.swing.JTextPane;
 import javax.swing.JTextField;
 import java.awt.Font;
+import java.awt.Image;
+import java.awt.Toolkit;
 
 public class Tela extends JFrame {
 
@@ -32,6 +35,15 @@ public class Tela extends JFrame {
 			public void run() {
 				try {
 					Tela frame = new Tela();
+					URL caminhoImagem = this.getClass().getResource("IfscLogo.png");
+					Image iconeTitulo = Toolkit.getDefaultToolkit().getImage(caminhoImagem);
+					
+					frame.setIconImage(iconeTitulo);
+					
+					
+
+					// ("C:Users/Athay/OneDrive/Imagens/Capturas de tela/Ifsc.png");
+					frame.setTitle("IFSC-Eventos");
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -55,13 +67,13 @@ public class Tela extends JFrame {
 		setContentPane(contentPane);
 		
 		JLabel LabelLogoIFSC = new JLabel("");
-		LabelLogoIFSC.setIcon(new ImageIcon("C:\\Users\\Athay\\Downloads\\image 8.png"));
+		LabelLogoIFSC.setIcon(new ImageIcon(Tela.class.getResource("/tcc1/image 8.png")));
 		
 		JLabel LabelDivisor = new JLabel("");
 		LabelDivisor.setIcon(new ImageIcon("C:\\Users\\Athay\\Downloads\\Line 6.png"));
 		
 		JLabel LabelLogoNoticias = new JLabel("");
-		LabelLogoNoticias.setIcon(new ImageIcon("C:\\Users\\Athay\\Downloads\\noticia 1.png"));
+		LabelLogoNoticias.setIcon(new ImageIcon(Tela.class.getResource("/tcc1/ebook2 2.png")));
 		
 		JLabel LabelCampoCursoOfertado = new JLabel("Curso ofertado");
 		LabelCampoCursoOfertado.setFont(new Font("Tahoma", Font.BOLD, 10));
@@ -82,25 +94,34 @@ public class Tela extends JFrame {
 		LabelDescricaoPrazo.setFont(new Font("Tahoma", Font.ITALIC, 10));
 		
 		JButton ButtonInscricao = new JButton("Quero me inscrver!");
+		ButtonInscricao.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		ButtonInscricao.setBackground(Color.GREEN);
 		
 		JButton ButtonUsuario = new JButton("");
-		ButtonUsuario.setIcon(new ImageIcon("C:\\Users\\Athay\\Downloads\\user-solid (1) 6.png"));
+		ButtonUsuario.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
+		ButtonUsuario.setIcon(new ImageIcon(Tela.class.getResource("/tcc1/user-solid (1) 6.png")));
 		ButtonUsuario.setForeground(Color.WHITE);
 		ButtonUsuario.setBackground(Color.WHITE);
 		
 		JButton ButtonConfiguracoes = new JButton("");
-		ButtonConfiguracoes.setIcon(new ImageIcon("C:\\Users\\Athay\\Downloads\\Vector.png"));
+		ButtonConfiguracoes.setIcon(new ImageIcon(Tela.class.getResource("/tcc1/Vector.png")));
 		ButtonConfiguracoes.setForeground(Color.WHITE);
 		ButtonConfiguracoes.setBackground(Color.WHITE);
 		
 		JButton ButtonInformacoes = new JButton("");
-		ButtonInformacoes.setIcon(new ImageIcon("C:\\Users\\Athay\\Downloads\\circle-info-solid (1) 5.png"));
+		ButtonInformacoes.setIcon(new ImageIcon(Tela.class.getResource("/tcc1/circle-info-solid (1) 5.png")));
 		ButtonInformacoes.setForeground(Color.WHITE);
 		ButtonInformacoes.setBackground(Color.WHITE);
 		
 		JButton ButtonAreaEstudante = new JButton("");
-		ButtonAreaEstudante.setIcon(new ImageIcon("C:\\Users\\Athay\\Downloads\\livro 3.png"));
+		ButtonAreaEstudante.setIcon(new ImageIcon(Tela.class.getResource("/tcc1/livro 3.png")));
 		ButtonAreaEstudante.setBackground(Color.WHITE);
 		
 		JLabel LabelTextoNoticias = new JLabel("Noticias Recentes");
@@ -111,7 +132,7 @@ public class Tela extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		ButtonMenu.setIcon(new ImageIcon("C:\\Users\\Athay\\OneDrive\\Documentos\\IFSC\\proejtoIntegrador\\menu3.png"));
+		ButtonMenu.setIcon(new ImageIcon(Tela.class.getResource("/tcc1/menu4.png")));
 		ButtonMenu.setBackground(Color.WHITE);
 		
 		JLabel LabelDivisor2 = new JLabel("");
@@ -141,8 +162,8 @@ public class Tela extends JFrame {
 									.addPreferredGap(ComponentPlacement.RELATED)
 									.addComponent(LabelTextoNoticias, GroupLayout.PREFERRED_SIZE, 130, GroupLayout.PREFERRED_SIZE))
 								.addGroup(gl_contentPane.createSequentialGroup()
-									.addComponent(LabelLogoIFSC, GroupLayout.PREFERRED_SIZE, 242, GroupLayout.PREFERRED_SIZE)
-									.addGap(12)
+									.addComponent(LabelLogoIFSC, GroupLayout.PREFERRED_SIZE, 268, GroupLayout.PREFERRED_SIZE)
+									.addGap(26)
 									.addComponent(ButtonMenu, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE))
 								.addGroup(gl_contentPane.createSequentialGroup()
 									.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
@@ -159,17 +180,17 @@ public class Tela extends JFrame {
 							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 								.addComponent(LabelDivisor2, GroupLayout.PREFERRED_SIZE, 376, GroupLayout.PREFERRED_SIZE)
 								.addComponent(LabelDivisor, GroupLayout.PREFERRED_SIZE, 376, GroupLayout.PREFERRED_SIZE))))
-					.addContainerGap(934, Short.MAX_VALUE))
+					.addContainerGap(963, Short.MAX_VALUE))
 		);
 		gl_contentPane.setVerticalGroup(
 			gl_contentPane.createParallelGroup(Alignment.TRAILING)
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addComponent(LabelLogoIFSC, GroupLayout.PREFERRED_SIZE, 78, GroupLayout.PREFERRED_SIZE)
+						.addComponent(LabelLogoIFSC, GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
 						.addGroup(gl_contentPane.createSequentialGroup()
-							.addContainerGap()
+							.addGap(43)
 							.addComponent(ButtonMenu, GroupLayout.PREFERRED_SIZE, 64, GroupLayout.PREFERRED_SIZE)))
-					.addPreferredGap(ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
+					.addGap(18)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
 						.addGroup(gl_contentPane.createSequentialGroup()
 							.addComponent(LabelTextoNoticias, GroupLayout.PREFERRED_SIZE, 17, GroupLayout.PREFERRED_SIZE)
@@ -198,12 +219,12 @@ public class Tela extends JFrame {
 					.addGap(29)
 					.addComponent(LabelDivisor2, GroupLayout.PREFERRED_SIZE, 6, GroupLayout.PREFERRED_SIZE)
 					.addGap(30)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addGroup(Alignment.TRAILING, gl_contentPane.createParallelGroup(Alignment.LEADING)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
+						.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 							.addComponent(ButtonUsuario, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE)
 							.addComponent(ButtonConfiguracoes, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE)
 							.addComponent(ButtonInformacoes, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE))
-						.addComponent(ButtonAreaEstudante, Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE))
+						.addComponent(ButtonAreaEstudante, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE))
 					.addGap(288))
 		);
 		contentPane.setLayout(gl_contentPane);

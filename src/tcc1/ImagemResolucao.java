@@ -54,7 +54,7 @@ public class ImagemResolucao extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\Athay\\eclipse-workspace\\ProjetoIntegrador1Abdiel\\src\\tcc1\\Ifsc.png"));
+		lblNewLabel.setIcon(new ImageIcon(ImagemResolucao.class.getResource("/tcc1/image 8.png")));
 		lblNewLabel.setBounds(25, 10, 308, 213);
 		contentPane.add(lblNewLabel);
 	}

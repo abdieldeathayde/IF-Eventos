@@ -43,7 +43,7 @@ public class TiraDuvidas extends JFrame {
 					
 
 					// ("C:Users/Athay/OneDrive/Imagens/Capturas de tela/Ifsc.png");
-					frame.setTitle("Tira Duvidas");
+					frame.setTitle("IFSC-Eventos");
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -65,7 +65,7 @@ public class TiraDuvidas extends JFrame {
 		setContentPane(contentPane);
 		
 		JLabel lblLogo = new JLabel("");
-		lblLogo.setIcon(new ImageIcon("C:\\Users\\Athay\\eclipse-workspace\\ProjetoIntegrador1Abdiel\\src\\tcc1\\image 8.png"));
+		lblLogo.setIcon(new ImageIcon(TiraDuvidas.class.getResource("/tcc1/image 8.png")));
 		
 		JLabel lblExplicacao = new JLabel("SUA PERGUNTA SERÁ ENVIADA PARA A COORDENAÇÃO\r\n DO CURSO DE ANÁLISE E DESENVOLVIMENTO DE SISTEMAS \r\n[547]/GAS  - TECNOLOGIA CAMPUS GASPAR");
 		
@@ -81,47 +81,38 @@ public class TiraDuvidas extends JFrame {
 		
 		JButton btnLivro = new JButton("");
 		btnLivro.setBackground(Color.WHITE);
-		btnLivro.setIcon(new ImageIcon("C:\\Users\\Athay\\Downloads\\user-solid (1) 6.png"));
+		btnLivro.setIcon(new ImageIcon(TiraDuvidas.class.getResource("/tcc1/user-solid (1) 6.png")));
 		
 		JButton btnConfiguracoes = new JButton("");
 		btnConfiguracoes.setBackground(Color.WHITE);
-		btnConfiguracoes.setIcon(new ImageIcon("C:\\Users\\Athay\\Downloads\\Vector.png"));
+		btnConfiguracoes.setIcon(new ImageIcon(TiraDuvidas.class.getResource("/tcc1/Vector.png")));
 		
 		JButton btnInformacoes = new JButton("");
 		btnInformacoes.setBackground(Color.WHITE);
-		btnInformacoes.setIcon(new ImageIcon("C:\\Users\\Athay\\Downloads\\circle-info-solid (1) 5 (1).png"));
+		btnInformacoes.setIcon(new ImageIcon(TiraDuvidas.class.getResource("/tcc1/circle-info-solid (1) 5.png")));
 		
 		JButton btnProgresso = new JButton("");
 		btnProgresso.setBackground(Color.WHITE);
-		btnProgresso.setIcon(new ImageIcon("C:\\Users\\Athay\\Downloads\\livro 3.png"));
+		btnProgresso.setIcon(new ImageIcon(TiraDuvidas.class.getResource("/tcc1/livro 3.png")));
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(20)
-							.addComponent(lblLogo))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(10)
-							.addComponent(lblExplicacao, GroupLayout.DEFAULT_SIZE, 2162, Short.MAX_VALUE)))
-					.addGap(10))
-				.addGroup(gl_contentPane.createSequentialGroup()
 					.addContainerGap()
 					.addComponent(lblInformeTitulo)
-					.addContainerGap(2090, Short.MAX_VALUE))
+					.addContainerGap(1529, Short.MAX_VALUE))
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addContainerGap()
 					.addComponent(tfTitulo, GroupLayout.PREFERRED_SIZE, 311, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(1861, Short.MAX_VALUE))
+					.addContainerGap(1297, Short.MAX_VALUE))
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addContainerGap()
 					.addComponent(lblElaboraPergunta)
-					.addContainerGap(2065, Short.MAX_VALUE))
+					.addContainerGap(1506, Short.MAX_VALUE))
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addContainerGap()
 					.addComponent(tfDuvida, GroupLayout.PREFERRED_SIZE, 311, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(1861, Short.MAX_VALUE))
+					.addContainerGap(1297, Short.MAX_VALUE))
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addGap(32)
 					.addComponent(btnLivro)
@@ -131,22 +122,32 @@ public class TiraDuvidas extends JFrame {
 					.addComponent(btnInformacoes, GroupLayout.PREFERRED_SIZE, 59, GroupLayout.PREFERRED_SIZE)
 					.addGap(69)
 					.addComponent(btnProgresso)
-					.addContainerGap(1713, Short.MAX_VALUE))
+					.addContainerGap(1173, Short.MAX_VALUE))
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addGap(20)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+						.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
+							.addGap(10)
+							.addComponent(lblExplicacao, GroupLayout.DEFAULT_SIZE, 1578, Short.MAX_VALUE)
+							.addContainerGap())
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addComponent(lblLogo)
+							.addGap(10))))
 		);
 		gl_contentPane.setVerticalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addGap(9)
 					.addComponent(lblLogo)
-					.addGap(6)
-					.addComponent(lblExplicacao, GroupLayout.PREFERRED_SIZE, 194, GroupLayout.PREFERRED_SIZE)
-					.addGap(6)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(lblExplicacao, GroupLayout.PREFERRED_SIZE, 175, GroupLayout.PREFERRED_SIZE)
+					.addGap(46)
 					.addComponent(lblInformeTitulo)
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addComponent(tfTitulo, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 					.addGap(18)
 					.addComponent(lblElaboraPergunta)
-					.addPreferredGap(ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+					.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 					.addComponent(tfDuvida, GroupLayout.PREFERRED_SIZE, 66, GroupLayout.PREFERRED_SIZE)
 					.addGap(96)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
