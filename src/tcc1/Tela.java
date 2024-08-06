@@ -57,7 +57,7 @@ public class Tela extends JFrame {
 	 */
 	public Tela() {
 		setTitle("IFSC-Eventos");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 556, 619);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(255, 255, 255));
@@ -111,16 +111,34 @@ public class Tela extends JFrame {
 		ButtonUsuario.setBackground(Color.WHITE);
 		
 		JButton ButtonConfiguracoes = new JButton("");
+		ButtonConfiguracoes.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Configuracoes configuracoes = new Configuracoes();
+				configuracoes.setVisible(true);
+				dispose();
+			}
+		});
 		ButtonConfiguracoes.setIcon(new ImageIcon(Tela.class.getResource("/tcc1/Vector.png")));
 		ButtonConfiguracoes.setForeground(Color.WHITE);
 		ButtonConfiguracoes.setBackground(Color.WHITE);
 		
 		JButton ButtonInformacoes = new JButton("");
+		ButtonInformacoes.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TiraDuvidas tiraDuvidas = new TiraDuvidas();
+				tiraDuvidas.setVisible(true);
+				dispose();
+			}
+		});
 		ButtonInformacoes.setIcon(new ImageIcon(Tela.class.getResource("/tcc1/circle-info-solid (1) 5.png")));
 		ButtonInformacoes.setForeground(Color.WHITE);
 		ButtonInformacoes.setBackground(Color.WHITE);
 		
 		JButton ButtonAreaEstudante = new JButton("");
+		ButtonAreaEstudante.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		ButtonAreaEstudante.setIcon(new ImageIcon(Tela.class.getResource("/tcc1/livro 3.png")));
 		ButtonAreaEstudante.setBackground(Color.WHITE);
 		

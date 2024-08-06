@@ -16,6 +16,8 @@ import java.net.URL;
 
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Login extends JFrame {
 
@@ -52,7 +54,7 @@ public class Login extends JFrame {
 	 * Create the frame.
 	 */
 	public Login() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 934, 755);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.WHITE);
@@ -85,6 +87,13 @@ public class Login extends JFrame {
 		Senha.setColumns(10);
 		
 		JButton BotaoLogin = new JButton("Entrar");
+		BotaoLogin.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Tela tela = new Tela();
+				tela.setVisible(true);
+				dispose();
+			}
+		});
 		BotaoLogin.setBackground(Color.WHITE);
 		BotaoLogin.setBounds(123, 293, 85, 21);
 		contentPane.add(BotaoLogin);

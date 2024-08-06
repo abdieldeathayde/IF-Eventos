@@ -54,7 +54,7 @@ public class Configuracoes extends Tela {
 	 * Create the frame.
 	 */
 	public Configuracoes() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 556, 619);
 		contentPane = new JPanel();
 		contentPane.setForeground(Color.WHITE);
@@ -151,6 +151,10 @@ public class Configuracoes extends Tela {
 		LabelSenha.setFont(new Font("Tahoma", Font.BOLD, 14));
 		
 		JButton ButtonUsuario = new JButton("");
+		ButtonUsuario.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		ButtonUsuario.setBackground(Color.WHITE);
 		ButtonUsuario.setIcon(new ImageIcon(Configuracoes.class.getResource("/tcc1/user-solid (1) 6.png")));
 		
@@ -163,16 +167,27 @@ public class Configuracoes extends Tela {
 		ButtonConfiguracoes.setIcon(new ImageIcon(Configuracoes.class.getResource("/tcc1/Vector.png")));
 		
 		JButton ButtonInformacoes = new JButton("");
+		ButtonInformacoes.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TiraDuvidas tiraDuvidas = new TiraDuvidas();
+				tiraDuvidas.setVisible(true);
+				dispose();
+			}
+		});
 		ButtonInformacoes.setBackground(Color.WHITE);
 		ButtonInformacoes.setIcon(new ImageIcon(Configuracoes.class.getResource("/tcc1/circle-info-solid (1) 5.png")));
 		
 		JButton ButtonAreaEstudante = new JButton("");
+		ButtonAreaEstudante.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		ButtonAreaEstudante.setBackground(Color.WHITE);
 		ButtonAreaEstudante.setForeground(Color.WHITE);
 		ButtonAreaEstudante.setIcon(new ImageIcon(Configuracoes.class.getResource("/tcc1/livro 3.png")));
 		
 		JLabel LabelDivisor = new JLabel("");
-		LabelDivisor.setIcon(new ImageIcon("C:\\Users\\Athay\\Downloads\\Line 6.png"));
+		LabelDivisor.setIcon(new ImageIcon(Configuracoes.class.getResource("/tcc1/Line 6.png")));
 		
 		JLabel LabelNomeSocial = new JLabel("Campo Vazio");
 		LabelNomeSocial.setFont(new Font("Tahoma", Font.ITALIC, 14));
@@ -183,7 +198,7 @@ public class Configuracoes extends Tela {
 		JLabel LabelDivisor_1 = new JLabel("");
 		
 		JLabel LabelDivisor_2 = new JLabel("");
-		LabelDivisor_2.setIcon(new ImageIcon("C:\\Users\\Athay\\Downloads\\Line 6.png"));
+		LabelDivisor_2.setIcon(new ImageIcon(Configuracoes.class.getResource("/tcc1/Line 6.png")));
 		
 		JButton ButtonMenu = new JButton("");
 		ButtonMenu.setIcon(new ImageIcon(Configuracoes.class.getResource("/tcc1/menu4.png")));

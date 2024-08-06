@@ -16,6 +16,8 @@ import java.awt.Toolkit;
 import java.net.URL;
 
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class CadastroProfessor extends JFrame {
 
@@ -27,6 +29,15 @@ public class CadastroProfessor extends JFrame {
 	private JTextField senhaTF2;
 	private JTextField CargoTF;
 	private JTextField telefoneTF;
+	private JTextField NomeCivilTF;
+	private JTextField FaculdadeTF;
+	private JTextField NomeSocialTF;
+	private JTextField SexoTF;
+	private JTextField DataNascimentoTF;
+	private JTextField tipoSanguineoTF;
+	private JTextField NaturalidadeTF;
+	private JTextField NacionalidadeTF;
+	private JLabel campoNacionalidadeJLbl;
 
 	/**
 	 * Launch the application.
@@ -59,8 +70,8 @@ public class CadastroProfessor extends JFrame {
 	public CadastroProfessor() {
 		setForeground(Color.WHITE);
 		setBackground(Color.WHITE);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 844, 554);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		setBounds(100, 100, 930, 765);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.WHITE);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -92,7 +103,7 @@ public class CadastroProfessor extends JFrame {
 		contentPane.add(campoEmailJLbl);
 		
 		emailTF = new JTextField();
-		emailTF.setBounds(248, 234, 96, 19);
+		emailTF.setBounds(245, 234, 96, 19);
 		contentPane.add(emailTF);
 		emailTF.setColumns(10);
 		
@@ -101,7 +112,7 @@ public class CadastroProfessor extends JFrame {
 		contentPane.add(campoSenhaJLbl);
 		
 		senhaTF1 = new JPasswordField();
-		senhaTF1.setBounds(254, 287, 96, 19);
+		senhaTF1.setBounds(245, 287, 96, 19);
 		contentPane.add(senhaTF1);
 		senhaTF1.setColumns(10);
 		
@@ -110,7 +121,7 @@ public class CadastroProfessor extends JFrame {
 		contentPane.add(campoSenhaJlbl);
 		
 		senhaTF2 = new JPasswordField();
-		senhaTF2.setBounds(254, 332, 96, 19);
+		senhaTF2.setBounds(245, 332, 96, 19);
 		contentPane.add(senhaTF2);
 		senhaTF2.setColumns(10);
 		
@@ -119,7 +130,7 @@ public class CadastroProfessor extends JFrame {
 		contentPane.add(campoCargoJLbl);
 		
 		CargoTF = new JTextField();
-		CargoTF.setBounds(254, 379, 96, 19);
+		CargoTF.setBounds(245, 376, 96, 19);
 		contentPane.add(CargoTF);
 		CargoTF.setColumns(10);
 		
@@ -128,14 +139,93 @@ public class CadastroProfessor extends JFrame {
 		contentPane.add(TelefoneJLbl);
 		
 		telefoneTF = new JTextField();
-		telefoneTF.setBounds(254, 430, 96, 19);
+		telefoneTF.setBounds(245, 430, 96, 19);
 		contentPane.add(telefoneTF);
 		telefoneTF.setColumns(10);
 		
 		JButton btnNewButton = new JButton("Inscrever");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Login login = new Login();
+				login.setVisible(true);
+				dispose();
+			}
+		});
 		btnNewButton.setBackground(Color.WHITE);
-		btnNewButton.setBounds(176, 469, 123, 21);
+		btnNewButton.setBounds(189, 686, 123, 21);
 		contentPane.add(btnNewButton);
+		
+		JLabel campoNomeCivilJLbl = new JLabel("Nome Civil:");
+		campoNomeCivilJLbl.setBounds(136, 474, 79, 13);
+		contentPane.add(campoNomeCivilJLbl);
+		
+		NomeCivilTF = new JTextField();
+		NomeCivilTF.setBounds(245, 471, 96, 19);
+		contentPane.add(NomeCivilTF);
+		NomeCivilTF.setColumns(10);
+		
+		JLabel campoFaculdadeJLbl = new JLabel("Faculdade:");
+		campoFaculdadeJLbl.setBounds(136, 524, 69, 13);
+		contentPane.add(campoFaculdadeJLbl);
+		
+		FaculdadeTF = new JTextField();
+		FaculdadeTF.setBounds(245, 521, 96, 19);
+		contentPane.add(FaculdadeTF);
+		FaculdadeTF.setColumns(10);
+		
+		JLabel campoNomeSocialJLbl = new JLabel("Nome Social");
+		campoNomeSocialJLbl.setBounds(136, 576, 69, 13);
+		contentPane.add(campoNomeSocialJLbl);
+		
+		NomeSocialTF = new JTextField();
+		NomeSocialTF.setBounds(245, 573, 96, 19);
+		contentPane.add(NomeSocialTF);
+		NomeSocialTF.setColumns(10);
+		
+		JLabel campoSexoJLbl = new JLabel("Sexo:");
+		campoSexoJLbl.setBounds(136, 634, 45, 13);
+		contentPane.add(campoSexoJLbl);
+		
+		SexoTF = new JTextField();
+		SexoTF.setBounds(245, 628, 96, 19);
+		contentPane.add(SexoTF);
+		SexoTF.setColumns(10);
+		
+		JLabel campoDataNascimentoJLbl = new JLabel("Data Nascimento:");
+		campoDataNascimentoJLbl.setBounds(426, 186, 108, 13);
+		contentPane.add(campoDataNascimentoJLbl);
+		
+		DataNascimentoTF = new JTextField();
+		DataNascimentoTF.setBounds(555, 183, 96, 19);
+		contentPane.add(DataNascimentoTF);
+		DataNascimentoTF.setColumns(10);
+		
+		JLabel campoTipoSanguineoJLbl = new JLabel("Tipo Sanguineo:");
+		campoTipoSanguineoJLbl.setBounds(426, 237, 108, 13);
+		contentPane.add(campoTipoSanguineoJLbl);
+		
+		tipoSanguineoTF = new JTextField();
+		tipoSanguineoTF.setBounds(555, 234, 96, 19);
+		contentPane.add(tipoSanguineoTF);
+		tipoSanguineoTF.setColumns(10);
+		
+		JLabel campoNaturalidadeJLbl = new JLabel("Naturalidade:");
+		campoNaturalidadeJLbl.setBounds(426, 290, 108, 13);
+		contentPane.add(campoNaturalidadeJLbl);
+		
+		NaturalidadeTF = new JTextField();
+		NaturalidadeTF.setBounds(555, 287, 96, 19);
+		contentPane.add(NaturalidadeTF);
+		NaturalidadeTF.setColumns(10);
+		
+		campoNacionalidadeJLbl = new JLabel("Nacionalidade:");
+		campoNacionalidadeJLbl.setBounds(426, 349, 96, 13);
+		contentPane.add(campoNacionalidadeJLbl);
+		
+		NacionalidadeTF = new JTextField();
+		NacionalidadeTF.setBounds(555, 346, 96, 19);
+		contentPane.add(NacionalidadeTF);
+		NacionalidadeTF.setColumns(10);
 	}
 
 }
