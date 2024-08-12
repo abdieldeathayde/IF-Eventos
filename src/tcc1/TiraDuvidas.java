@@ -44,6 +44,7 @@ public class TiraDuvidas extends JFrame {
 
 					// ("C:Users/Athay/OneDrive/Imagens/Capturas de tela/Ifsc.png");
 					frame.setTitle("IFSC-Eventos");
+					
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
