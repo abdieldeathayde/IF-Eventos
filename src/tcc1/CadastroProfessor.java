@@ -14,6 +14,12 @@ import java.awt.Font;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -26,7 +32,6 @@ public class CadastroProfessor extends JFrame {
 	private JTextField UsuarioTF;
 	private JTextField emailTF;
 	private JTextField senhaTF1;
-	private JTextField senhaTF2;
 	private JTextField CargoTF;
 	private JTextField telefoneTF;
 	private JTextField NomeCivilTF;
@@ -54,7 +59,7 @@ public class CadastroProfessor extends JFrame {
 					
 					
 
-					// ("C:Users/Athay/OneDrive/Imagens/Capturas de tela/Ifsc.png");
+					//("C:Users/Athay/OneDrive/Imagens/Capturas de tela/Ifsc.png");
 					frame.setTitle("IFSC-Eventos");
 					frame.setVisible(true);
 				} catch (Exception e) {
@@ -116,15 +121,6 @@ public class CadastroProfessor extends JFrame {
 		contentPane.add(senhaTF1);
 		senhaTF1.setColumns(10);
 		
-		JLabel campoSenhaJlbl = new JLabel("Repita a senha:");
-		campoSenhaJlbl.setBounds(136, 335, 108, 13);
-		contentPane.add(campoSenhaJlbl);
-		
-		senhaTF2 = new JPasswordField();
-		senhaTF2.setBounds(245, 332, 96, 19);
-		contentPane.add(senhaTF2);
-		senhaTF2.setColumns(10);
-		
 		JLabel campoCargoJLbl = new JLabel("Cargo:");
 		campoCargoJLbl.setBounds(136, 379, 45, 13);
 		contentPane.add(campoCargoJLbl);
@@ -135,11 +131,11 @@ public class CadastroProfessor extends JFrame {
 		CargoTF.setColumns(10);
 		
 		JLabel TelefoneJLbl = new JLabel("Telefone");
-		TelefoneJLbl.setBounds(136, 433, 79, 13);
+		TelefoneJLbl.setBounds(136, 334, 79, 13);
 		contentPane.add(TelefoneJLbl);
 		
 		telefoneTF = new JTextField();
-		telefoneTF.setBounds(245, 430, 96, 19);
+		telefoneTF.setBounds(245, 331, 96, 19);
 		contentPane.add(telefoneTF);
 		telefoneTF.setColumns(10);
 		
@@ -152,42 +148,42 @@ public class CadastroProfessor extends JFrame {
 			}
 		});
 		btnNewButton.setBackground(Color.WHITE);
-		btnNewButton.setBounds(189, 686, 123, 21);
+		btnNewButton.setBounds(321, 524, 123, 21);
 		contentPane.add(btnNewButton);
 		
 		JLabel campoNomeCivilJLbl = new JLabel("Nome Civil:");
-		campoNomeCivilJLbl.setBounds(136, 474, 79, 13);
+		campoNomeCivilJLbl.setBounds(136, 423, 79, 13);
 		contentPane.add(campoNomeCivilJLbl);
 		
 		NomeCivilTF = new JTextField();
-		NomeCivilTF.setBounds(245, 471, 96, 19);
+		NomeCivilTF.setBounds(245, 420, 96, 19);
 		contentPane.add(NomeCivilTF);
 		NomeCivilTF.setColumns(10);
 		
 		JLabel campoFaculdadeJLbl = new JLabel("Faculdade:");
-		campoFaculdadeJLbl.setBounds(136, 524, 69, 13);
+		campoFaculdadeJLbl.setBounds(136, 470, 69, 13);
 		contentPane.add(campoFaculdadeJLbl);
 		
 		FaculdadeTF = new JTextField();
-		FaculdadeTF.setBounds(245, 521, 96, 19);
+		FaculdadeTF.setBounds(245, 467, 96, 19);
 		contentPane.add(FaculdadeTF);
 		FaculdadeTF.setColumns(10);
 		
 		JLabel campoNomeSocialJLbl = new JLabel("Nome Social");
-		campoNomeSocialJLbl.setBounds(136, 576, 69, 13);
+		campoNomeSocialJLbl.setBounds(426, 379, 69, 13);
 		contentPane.add(campoNomeSocialJLbl);
 		
 		NomeSocialTF = new JTextField();
-		NomeSocialTF.setBounds(245, 573, 96, 19);
+		NomeSocialTF.setBounds(555, 376, 96, 19);
 		contentPane.add(NomeSocialTF);
 		NomeSocialTF.setColumns(10);
 		
 		JLabel campoSexoJLbl = new JLabel("Sexo:");
-		campoSexoJLbl.setBounds(136, 634, 45, 13);
+		campoSexoJLbl.setBounds(426, 423, 45, 13);
 		contentPane.add(campoSexoJLbl);
 		
 		SexoTF = new JTextField();
-		SexoTF.setBounds(245, 628, 96, 19);
+		SexoTF.setBounds(555, 420, 96, 19);
 		contentPane.add(SexoTF);
 		SexoTF.setColumns(10);
 		
@@ -219,13 +215,56 @@ public class CadastroProfessor extends JFrame {
 		NaturalidadeTF.setColumns(10);
 		
 		campoNacionalidadeJLbl = new JLabel("Nacionalidade:");
-		campoNacionalidadeJLbl.setBounds(426, 349, 96, 13);
+		campoNacionalidadeJLbl.setBounds(426, 334, 96, 13);
 		contentPane.add(campoNacionalidadeJLbl);
 		
 		NacionalidadeTF = new JTextField();
-		NacionalidadeTF.setBounds(555, 346, 96, 19);
+		NacionalidadeTF.setBounds(555, 331, 96, 19);
 		contentPane.add(NacionalidadeTF);
 		NacionalidadeTF.setColumns(10);
 	}
+	
+	public void inserirProfessor() throws ClassNotFoundException, SQLException {
+//		CadastroProfessor cadastroProfessor = new CadastroProfessor();
+		CadastroProfessor.inserirProfessor(UsuarioTF.getText(), emailTF.getText(), new String(senhaTF1.getText()), telefoneTF.getText(), CargoTF.getText(), NomeCivilTF.getText(), FaculdadeTF.getText(), DataNascimentoTF.getText(), tipoSanguineoTF.getText(), NaturalidadeTF.getText(), NacionalidadeTF.getText(), NomeSocialTF.getText(), SexoTF.getText());
+	}
 
+	public static void inserirProfessor(String usuario, String email, String senha, String telefone, String cargo, String nomeCivil, String faculdade, String dataNascimento, String tipoSanguineo, String naturalidade, String nacionalidade,  String nomeSocial, String sexo) throws ClassNotFoundException {
+	
+		String sql = "INSERT INTO PROFESSOR (usuario, email, senha, telefone, cargo, nomeCivil, faculdade, dataNascimento, tipoSanguineo, naturalidade, nacionalidade, nomeSocial, sexo)  VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,? )";
+	
+			
+		Class.forName("com.mysql.cj.jdbc.Driver");	
+		    
+		try (Connection conn = ConexaoDAO.conectaBD();
+	
+				PreparedStatement pstmt = conn.prepareStatement(sql)) {
+					
+		
+					pstmt.setString(1, usuario);
+					pstmt.setString(2, email);
+					pstmt.setString(3, senha);
+					pstmt.setString(4, cargo);
+					pstmt.setString(5, nomeCivil);
+					pstmt.setString(6, faculdade);
+					pstmt.setDate(7, Date.valueOf(LocalDate.parse(dataNascimento)));
+					pstmt.setString(8, naturalidade);
+					pstmt.setString(9, nacionalidade);
+					pstmt.setString(10, telefone);
+					pstmt.setString(11, nomeSocial);
+					pstmt.setString(12, tipoSanguineo);
+					pstmt.setString(13, sexo);
+					
+		
+					pstmt.executeUpdate();
+					conn.close();
+	
+			System.out.println("Professor inserido com sucesso!");
+	
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	private static SimpleDateFormat formatData = new SimpleDateFormat("dd/MM/yyyy");
 }
+

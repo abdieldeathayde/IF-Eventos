@@ -3,7 +3,6 @@ package tcc1;
 import java.awt.EventQueue;
 import java.awt.Image;
 import java.awt.Toolkit;
-import java.awt.Window;
 import java.net.URL;
 
 import javax.swing.JFrame;
@@ -16,8 +15,6 @@ import javax.swing.JLabel;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.ImageIcon;
 import javax.swing.JTextField;
-import javax.swing.JTextArea;
-import javax.swing.JTextPane;
 import javax.swing.JButton;
 
 public class TiraDuvidas extends JFrame {

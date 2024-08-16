@@ -1,20 +1,7 @@
 package tcc1;
 
 public class Professor {
-    private int id;
-    private String usuario;
-    private String email;
-    private String senha;
-    private String cargo;
-    private String telefone;
-    private String nomeCivil;
-    private String faculdade;
-    private String nomeSocial;
-    private String sexo;
-    private String dataNascimento;
-    private String tipoSanguineo;
-    private String naturalidade;
-    private String nacionalidade;
+    
 	public String getCargo() {
 		// TODO Auto-generated method stub
 		return null;
