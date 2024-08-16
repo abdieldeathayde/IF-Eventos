@@ -16,6 +16,7 @@ import java.awt.Toolkit;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.Date;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
@@ -231,10 +232,14 @@ public class CadastroProfessor extends JFrame {
 
 	public static void inserirProfessor(String usuario, String email, String senha, String telefone, String cargo, String nomeCivil, String faculdade, String dataNascimento, String tipoSanguineo, String naturalidade, String nacionalidade,  String nomeSocial, String sexo) throws ClassNotFoundException {
 	
-		String sql = "INSERT INTO PROFESSOR (usuario, email, senha, telefone, cargo, nomeCivil, faculdade, dataNascimento, tipoSanguineo, naturalidade, nacionalidade, nomeSocial, sexo)  VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,? )";
+		String sql = "INSERT INTO PROFESSOR (usuario, email, senha, telefone, cargo, nomeCivil, faculdade, dataNascimento, tipoSanguineo, naturalidade, nacionalidade, nomeSocial, sexo)  VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?  )";
 	
 			
 		Class.forName("com.mysql.cj.jdbc.Driver");	
+		
+		final String URL = "jdbc:mysql:/127.0.0.1:3306/studies?";
+	    final String USER = "root";
+	    final String PASSWORD = "88567731";
 		    
 		try (Connection conn = ConexaoDAO.conectaBD();
 	
@@ -244,16 +249,20 @@ public class CadastroProfessor extends JFrame {
 					pstmt.setString(1, usuario);
 					pstmt.setString(2, email);
 					pstmt.setString(3, senha);
-					pstmt.setString(4, cargo);
-					pstmt.setString(5, nomeCivil);
-					pstmt.setString(6, faculdade);
-					pstmt.setDate(7, Date.valueOf(LocalDate.parse(dataNascimento)));
-					pstmt.setString(8, naturalidade);
-					pstmt.setString(9, nacionalidade);
-					pstmt.setString(10, telefone);
-					pstmt.setString(11, nomeSocial);
-					pstmt.setString(12, tipoSanguineo);
-					pstmt.setString(13, sexo);
+					
+					
+					pstmt.setString(4, telefone);
+					pstmt.setString(5, cargo);
+					pstmt.setString(6, nomeCivil);
+					pstmt.setString(7, faculdade);
+					pstmt.setDate(8, java.sql.Date.valueOf(dataNascimento));
+					
+					pstmt.setString(9, tipoSanguineo);
+					pstmt.setString(10, naturalidade);
+					pstmt.setString(11, nacionalidade);
+					pstmt.setString(12, nomeSocial);
+					pstmt.setString(13), sexo);
+					
 					
 		
 					pstmt.executeUpdate();
