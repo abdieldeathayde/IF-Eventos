@@ -296,5 +296,12 @@ public class CadastroAluno extends JFrame {
 			e.printStackTrace();
 		}
 	}
+	public static SimpleDateFormat getFormatData() {
+		return formatData;
+	}
+
+	public static void setFormatData(SimpleDateFormat formatData) {
+		CadastroAluno.formatData = formatData;
+	}
 	private static SimpleDateFormat formatData = new SimpleDateFormat("dd/MM/yyyy");
 }

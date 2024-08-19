@@ -1,5 +1,3 @@
-package tcc1;
-
 
 
 public class Professor {
