@@ -25,6 +25,8 @@ import javax.swing.JPasswordField;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
 import java.awt.event.ActionListener;
+import java.io.InputStream;
+import java.io.Reader;
 import java.awt.event.ActionEvent;
 
 public class CadastroProfessor extends JFrame {
@@ -33,17 +35,11 @@ public class CadastroProfessor extends JFrame {
 	private JPanel contentPane;
 	private JTextField usuarioTF;
 	private JPasswordField senhaTF1;
-	private JTextField cargoTF;
-	private JTextField NomeCivilTF;
-	private JTextField faculdadeTF;
+	
 	private JTextField emailTF;
 	private JTextField telefoneTF;
-	private JTextField NomeSocialTF;
-	private JTextField sexoTF;
 	private JTextField dataNascimentoTF;
-	private JTextField tipoSanguineoTF;
-	private JTextField naturalidadeTF;
-	private JTextField NacionalidadeTF;
+	
 
 	/**
 	 * * Launch the application.
@@ -152,7 +148,7 @@ public class CadastroProfessor extends JFrame {
 				login.setVisible(true);
 				try {
 					//validarUsuarioESenha(usuarioTF.getText(), senhaTF1.getPassword(), emailTF.getText(), telefoneTF.getText());
-					inserirProfessor();
+					inserirProfessor(usuarioTF.getText(), senhaTF1.getPassword(), emailTF.getText(), telefoneTF.getText(), dataNascimentoTF.getText());
 					
 				} catch (ClassNotFoundException | SQLException e1) {
 					// TODO Auto-generated catch block
@@ -171,10 +167,10 @@ public class CadastroProfessor extends JFrame {
 		
 	}
 
-	public void inserirProfessor(String usuario, String email, char[] senha, String telefone, String dataNascimento) throws ClassNotFoundException, SQLException {
+//	public void inserirProfessor(String usuario, String email, String senha, String telefone, String dataNascimento) throws ClassNotFoundException, SQLException {
 //		CadastroProfessor cadastroProfessor = new CadastroProfessor();
-		CadastroProfessor.inserirProfessor(usuario, email, senha.toString(), telefone, dataNascimento);
-	}
+//		cadastroProfessor.inserirProfessor(usuario, email, senha, telefone, dataNascimento);
+//	}
 	
 	public void validarUsuarioESenha(String usuario, String senha) {
 		//Class.forName("com.mysql.cj.jdbc.Driver");
@@ -193,7 +189,7 @@ public class CadastroProfessor extends JFrame {
 		
 	}
 
-	public static void inserirProfessor(String usuario, String email, String senha, String telefone, String dataNascimento) throws ClassNotFoundException, SQLException {
+	public static void inserirProfessor(String usuario, char[] senha, String email,  String telefone, String dataNascimento) throws ClassNotFoundException, SQLException {
 			String sql = "INSERT INTO Professor (usuario, email, senha, telefone, dataNascimento)"
 					+ " VALUES (?,?,?,?,?)" ;
 	
@@ -206,8 +202,9 @@ public class CadastroProfessor extends JFrame {
 				PreparedStatement pstmt = conn.prepareStatement(sql)) {
 		
 					pstmt.setString(1, usuario);
-					pstmt.setString(2, email);
-					pstmt.setString(3, senha);
+					pstmt.setString(2, senha.toString()); 
+					pstmt.setString(3, email);
+					
 					
 					pstmt.setString(4, telefone);
 					
