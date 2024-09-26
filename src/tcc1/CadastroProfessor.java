@@ -114,60 +114,44 @@ public class CadastroProfessor extends JFrame {
 
 		
 
-		JLabel CampocargoTF = new JLabel("Cargo:");
-		CampocargoTF.setBounds(44, 345, 72, 13);
-		contentPane.add(CampocargoTF);
+		
 
-		cargoTF = new JTextField();
-		cargoTF.setBounds(191, 342, 96, 19);
-		contentPane.add(cargoTF);
-		cargoTF.setColumns(10);
-
-		JLabel campoNomeCivilTF = new JLabel("Nome Civil:");
-		campoNomeCivilTF.setHorizontalAlignment(SwingConstants.LEFT);
-		campoNomeCivilTF.setBounds(44, 395, 124, 13);
-		contentPane.add(campoNomeCivilTF);
-
-		NomeCivilTF = new JTextField();
-		NomeCivilTF.setBounds(191, 392, 96, 19);
-		contentPane.add(NomeCivilTF);
-		NomeCivilTF.setColumns(10);
-
-		JLabel campofaculdadeTF = new JLabel("faculdade:");
-		campofaculdadeTF.setBounds(44, 447, 45, 13);
-		contentPane.add(campofaculdadeTF);
-
-		faculdadeTF = new JTextField();
-		faculdadeTF.setBounds(191, 444, 96, 19);
-		contentPane.add(faculdadeTF);
-		faculdadeTF.setColumns(10);
-
-		JLabel campoEmailTF = new JLabel("Email:");
-		campoEmailTF.setBounds(44, 492, 45, 13);
-		contentPane.add(campoEmailTF);
+		JLabel campoEmailjlbl = new JLabel("Email:");
+		campoEmailjlbl.setBounds(44, 300, 45, 13);
+		contentPane.add(campoEmailjlbl);
 
 		emailTF = new JTextField();
-		emailTF.setBounds(191, 489, 96, 19);
+		emailTF.setBounds(191, 300, 96, 19);
 		contentPane.add(emailTF);
 		emailTF.setColumns(10);
 
-		JLabel campoTelefoneTF = new JLabel("Telefone");
-		campoTelefoneTF.setHorizontalAlignment(SwingConstants.LEFT);
-		campoTelefoneTF.setBounds(44, 541, 85, 13);
-		contentPane.add(campoTelefoneTF);
+		JLabel campoTelefoneJLBL = new JLabel("Telefone");
+		campoTelefoneJLBL.setHorizontalAlignment(SwingConstants.LEFT);
+		campoTelefoneJLBL.setBounds(44, 344, 85, 13);
+		contentPane.add(campoTelefoneJLBL);
 
 		telefoneTF = new JTextField();
-		telefoneTF.setBounds(191, 538, 96, 19);
+		telefoneTF.setBounds(191, 344, 96, 19);
 		contentPane.add(telefoneTF);
 		telefoneTF.setColumns(10);
+		
+		JLabel campoDataNascimentoJLbl = new JLabel("Data Nascimento:");
+		campoDataNascimentoJLbl.setBounds(44, 400, 96, 13);
+		contentPane.add(campoDataNascimentoJLbl);
+		
+		
+		dataNascimentoTF = new JTextField();
+		dataNascimentoTF.setBounds(191, 400, 96, 19);
+		contentPane.add(dataNascimentoTF);
+		dataNascimentoTF.setColumns(10);
 
-		JButton botaoInscricaoTF = new JButton("Inscrever");
-		botaoInscricaoTF.addActionListener(new ActionListener() {
+		JButton botaoInscricaoJButton = new JButton("Inscrever");
+		botaoInscricaoJButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Login login = new Login();
 				login.setVisible(true);
 				try {
-					validarUsuarioESenha(usuarioTF.getText(), senhaTF1.getText());
+					//validarUsuarioESenha(usuarioTF.getText(), senhaTF1.getPassword(), emailTF.getText(), telefoneTF.getText());
 					inserirProfessor();
 					
 				} catch (ClassNotFoundException | SQLException e1) {
@@ -177,84 +161,19 @@ public class CadastroProfessor extends JFrame {
 				dispose();
 			}
 		});
-		botaoInscricaoTF.setBackground(Color.WHITE);
-		botaoInscricaoTF.setForeground(Color.BLACK);
-		botaoInscricaoTF.setBounds(125, 590, 111, 21);
-		contentPane.add(botaoInscricaoTF);
+		botaoInscricaoJButton.setBackground(Color.WHITE);
+		botaoInscricaoJButton.setForeground(Color.BLACK);
+		botaoInscricaoJButton.setBounds(125, 460, 111, 21);
+		contentPane.add(botaoInscricaoJButton);
 
-		JLabel campoNomeSocialJLbl = new JLabel("Nome Social:");
-		campoNomeSocialJLbl.setBounds(370, 201, 72, 13);
-		contentPane.add(campoNomeSocialJLbl);
-
-		NomeSocialTF = new JTextField();
-		NomeSocialTF.setBounds(472, 198, 96, 19);
-		contentPane.add(NomeSocialTF);
-		NomeSocialTF.setColumns(10);
-
-		JLabel campoSexoJLbl = new JLabel("Sexo:");
-		campoSexoJLbl.setBounds(370, 246, 45, 13);
-		contentPane.add(campoSexoJLbl);
-
-		sexoTF = new JTextField();
-		sexoTF.setBounds(472, 243, 96, 19);
-		contentPane.add(sexoTF);
-		sexoTF.setColumns(10);
-
-		dataNascimentoTF = new JTextField();
-		dataNascimentoTF.setBounds(472, 300, 96, 19);
-		contentPane.add(dataNascimentoTF);
-		dataNascimentoTF.setColumns(10);
-
-		JLabel campoDataNascimentoJLbl = new JLabel("Data Nascimento:");
-		campoDataNascimentoJLbl.setBounds(370, 303, 96, 13);
-		contentPane.add(campoDataNascimentoJLbl);
-		
-		campoDataNascimentoJLbl.setBounds(380, 300, 96, 13);
-		contentPane.add(campoDataNascimentoJLbl);
-		
-		JLabel campoTipoSanguineoJLbl = new JLabel("Tipo Sanguineo:");
-		campoTipoSanguineoJLbl.setBounds(44, 303, 111, 13);
-		contentPane.add(campoTipoSanguineoJLbl);
-		
-		tipoSanguineoTF = new JTextField();
-		tipoSanguineoTF.setBounds(191, 300, 96, 19);
-		contentPane.add(tipoSanguineoTF);
-		tipoSanguineoTF.setColumns(10);
 		
 		
-		JLabel campoEstadoCivilJLbl = new JLabel("Estado Civil:");
-		campoEstadoCivilJLbl.setBounds(390, 395, 79, 13);
-		contentPane.add(campoEstadoCivilJLbl);
-
-		JTextField estadoCivilTF = new JTextField();
-		estadoCivilTF.setBounds(472, 389, 96, 19);
-		contentPane.add(estadoCivilTF);
-		estadoCivilTF.setColumns(10);
-
-		JLabel campoNaturalidadeJLbl = new JLabel("Naturalidade:");
-		campoNaturalidadeJLbl.setBounds(370, 447, 72, 13);
-		contentPane.add(campoNaturalidadeJLbl);
-
-		naturalidadeTF = new JTextField();
-		naturalidadeTF.setBounds(472, 444, 96, 19);
-		contentPane.add(naturalidadeTF);
-		naturalidadeTF.setColumns(10);
-
-		JLabel NacionalidadeJLbl = new JLabel("Nacionalidade:");
-		NacionalidadeJLbl.setBounds(370, 492, 85, 13);
-		contentPane.add(NacionalidadeJLbl);
-
-		NacionalidadeTF = new JTextField();
-		NacionalidadeTF.setBounds(472, 489, 96, 19);
-		contentPane.add(NacionalidadeTF);
-		NacionalidadeTF.setColumns(10);
+		
 	}
 
-	public void inserirProfessor() throws ClassNotFoundException, SQLException {
+	public void inserirProfessor(String usuario, String email, char[] senha, String telefone, String dataNascimento) throws ClassNotFoundException, SQLException {
 //		CadastroProfessor cadastroProfessor = new CadastroProfessor();
-		CadastroProfessor.inserirProfessor(usuarioTF.getText(), emailTF.getText(), new String(senhaTF1.getPassword()), telefoneTF.getText(), cargoTF.getText(), NomeCivilTF.getText(), faculdadeTF.getText(),
-				dataNascimentoTF.getText(), tipoSanguineoTF.getText(), naturalidadeTF.getText(),
-				NacionalidadeTF.getText(), NomeSocialTF.getText(), sexoTF.getText());
+		CadastroProfessor.inserirProfessor(usuario, email, senha.toString(), telefone, dataNascimento);
 	}
 	
 	public void validarUsuarioESenha(String usuario, String senha) {
@@ -274,10 +193,9 @@ public class CadastroProfessor extends JFrame {
 		
 	}
 
-	public static void inserirProfessor(String usuario, String email, String senha, String telefone, String cargo, String nomeCivil, String faculdade, String dataNascimento, String tipoSanguineo,
-			String naturalidade, String nacionalidade, String nomeSocial, String sexo) throws ClassNotFoundException, SQLException {
-			String sql = "INSERT INTO Professor (usuario, email, senha, telefone, cargo, nomeCivil, faculdade, dataNascimento, tipoSanguineo, naturalidade, nacionalidade, nomeSocial, sexo)"
-					+ " VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)" ;
+	public static void inserirProfessor(String usuario, String email, String senha, String telefone, String dataNascimento) throws ClassNotFoundException, SQLException {
+			String sql = "INSERT INTO Professor (usuario, email, senha, telefone, dataNascimento)"
+					+ " VALUES (?,?,?,?,?)" ;
 	
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			
@@ -293,18 +211,9 @@ public class CadastroProfessor extends JFrame {
 					
 					pstmt.setString(4, telefone);
 					
-					pstmt.setString(5, cargo);
-					pstmt.setString(6, nomeCivil);
-					pstmt.setString(7, faculdade);
 					
-					pstmt.setDate(8, Date.valueOf(LocalDate.parse(dataNascimento)));
-					pstmt.setString(9, tipoSanguineo);
+					pstmt.setDate(5, Date.valueOf(LocalDate.parse(dataNascimento)));
 					
-					pstmt.setString(10, naturalidade);
-					pstmt.setString(11, nacionalidade);
-					
-					pstmt.setString(12, nomeSocial);
-					pstmt.setString(13, sexo);
 					
 
 					
