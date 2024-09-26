@@ -96,82 +96,46 @@ public class CadastroAluno extends JFrame {
 		textoIncricaoTF.setBounds(139, 161, 199, 13);
 		contentPane.add(textoIncricaoTF);
 
-		JLabel campoUsuarioTF = new JLabel("Usuário:");
-		campoUsuarioTF.setFont(new Font("Tahoma", Font.BOLD, 10));
-		campoUsuarioTF.setBounds(44, 201, 45, 13);
-		contentPane.add(campoUsuarioTF);
+		JLabel campoUsuarioJLBL = new JLabel("Usuário:");
+		campoUsuarioJLBL.setFont(new Font("Tahoma", Font.BOLD, 10));
+		campoUsuarioJLBL.setBounds(44, 201, 45, 13);
+		contentPane.add(campoUsuarioJLBL);
 
 		usuarioTF = new JTextField();
 		usuarioTF.setBounds(191, 199, 96, 19);
 		contentPane.add(usuarioTF);
 		usuarioTF.setColumns(10);
 
-		JLabel campoSenhaTF1 = new JLabel("Senha:");
-		campoSenhaTF1.setFont(new Font("Tahoma", Font.BOLD, 10));
-		campoSenhaTF1.setBounds(44, 246, 45, 13);
-		contentPane.add(campoSenhaTF1);
+		JLabel campoSenhaJLBL = new JLabel("Senha:");
+		campoSenhaJLBL.setFont(new Font("Tahoma", Font.BOLD, 10));
+		campoSenhaJLBL.setBounds(44, 246, 45, 13);
+		contentPane.add(campoSenhaJLBL);
 
 		senhaTF1 = new JPasswordField();
 		senhaTF1.setBounds(191, 244, 96, 19);
 		contentPane.add(senhaTF1);
 
-		JLabel campoSenhaTF2 = new JLabel("Repita a Senha:");
-		campoSenhaTF2.setBounds(44, 303, 111, 13);
-		contentPane.add(campoSenhaTF2);
-
-		senhaTF2 = new JPasswordField();
-		senhaTF2.setBounds(191, 300, 96, 19);
-		contentPane.add(senhaTF2);
-
-		JLabel CampoMatriculaTF = new JLabel("Matrícula");
-		CampoMatriculaTF.setBounds(44, 345, 72, 13);
-		contentPane.add(CampoMatriculaTF);
-
-		matriculaTF = new JTextField();
-		matriculaTF.setBounds(191, 342, 96, 19);
-		contentPane.add(matriculaTF);
-		matriculaTF.setColumns(10);
-
-		JLabel campoNomeCivilTF = new JLabel("Nome Civil:");
-		campoNomeCivilTF.setHorizontalAlignment(SwingConstants.LEFT);
-		campoNomeCivilTF.setBounds(44, 395, 124, 13);
-		contentPane.add(campoNomeCivilTF);
-
-		NomeCivilTF = new JTextField();
-		NomeCivilTF.setBounds(191, 392, 96, 19);
-		contentPane.add(NomeCivilTF);
-		NomeCivilTF.setColumns(10);
-
-		JLabel campoCursoTF = new JLabel("Curso:");
-		campoCursoTF.setBounds(44, 447, 45, 13);
-		contentPane.add(campoCursoTF);
-
-		cursoTF = new JTextField();
-		cursoTF.setBounds(191, 444, 96, 19);
-		contentPane.add(cursoTF);
-		cursoTF.setColumns(10);
-
-		JLabel campoEmailTF = new JLabel("Email:");
-		campoEmailTF.setBounds(44, 492, 45, 13);
-		contentPane.add(campoEmailTF);
+		JLabel campoEmailJLBL = new JLabel("Email:");
+		campoEmailJLBL.setBounds(44, 300, 45, 13);
+		contentPane.add(campoEmailJLBL);
 
 		emailTF = new JTextField();
-		emailTF.setBounds(191, 489, 96, 19);
+		emailTF.setBounds(191, 300, 96, 19);
 		contentPane.add(emailTF);
 		emailTF.setColumns(10);
 
-		JLabel campoTelefoneTF = new JLabel("Telefone");
-		campoTelefoneTF.setHorizontalAlignment(SwingConstants.LEFT);
-		campoTelefoneTF.setBounds(44, 541, 85, 13);
-		contentPane.add(campoTelefoneTF);
+		JLabel campoTelefoneJLBL = new JLabel("Telefone");
+		campoTelefoneJLBL.setHorizontalAlignment(SwingConstants.LEFT);
+		campoTelefoneJLBL.setBounds(44, 340, 85, 13);
+		contentPane.add(campoTelefoneJLBL);
 
 		telefoneTF = new JTextField();
-		telefoneTF.setBounds(191, 538, 96, 19);
+		telefoneTF.setBounds(191, 340, 96, 19);
 		contentPane.add(telefoneTF);
 		telefoneTF.setColumns(10);
 
-		JButton botaoInscricaoTF = new JButton("Inscrever");
-		botaoInscricaoTF.addActionListener(new ActionListener() {
+		JButton botaoInscricaoJButton = new JButton("Inscrever");
+		botaoInscricaoJButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Login login = new Login();
 				login.setVisible(true);
@@ -184,92 +148,21 @@ public class CadastroAluno extends JFrame {
 				dispose();
 			}
 		});
-		botaoInscricaoTF.setBackground(Color.WHITE);
-		botaoInscricaoTF.setForeground(Color.BLACK);
-		botaoInscricaoTF.setBounds(125, 590, 111, 21);
-		contentPane.add(botaoInscricaoTF);
-
-		JLabel campoNomeSocialJLbl = new JLabel("Nome Social:");
-		campoNomeSocialJLbl.setBounds(370, 201, 72, 13);
-		contentPane.add(campoNomeSocialJLbl);
-
-		NomeSocialTF = new JTextField();
-		NomeSocialTF.setBounds(472, 198, 96, 19);
-		contentPane.add(NomeSocialTF);
-		NomeSocialTF.setColumns(10);
-
-		JLabel campoSexoJLbl = new JLabel("Sexo:");
-		campoSexoJLbl.setBounds(370, 246, 45, 13);
-		contentPane.add(campoSexoJLbl);
-
-		sexoTF = new JTextField();
-		sexoTF.setBounds(472, 243, 96, 19);
-		contentPane.add(sexoTF);
-		sexoTF.setColumns(10);
-
-		dataNascimentoTF = new JTextField();
-		dataNascimentoTF.addPropertyChangeListener(new PropertyChangeListener() {
-			public void propertyChange(PropertyChangeEvent evt) {
-			}
-		});
-		dataNascimentoTF.setBounds(472, 300, 96, 19);
-		contentPane.add(dataNascimentoTF);
-		dataNascimentoTF.setColumns(10);
-
-		JLabel campoDataNascimentoJLbl = new JLabel("Data Nascimento:");
-		campoDataNascimentoJLbl.setBounds(370, 303, 96, 13);
-		contentPane.add(campoDataNascimentoJLbl);
-
-		JLabel campoTipoSanguineoJLbl = new JLabel("Tipo Sanguíneo:");
-		campoTipoSanguineoJLbl.setBounds(370, 345, 85, 13);
-		contentPane.add(campoTipoSanguineoJLbl);
-
-		JTextField tipoSanguineoTF = new JTextField();
-		tipoSanguineoTF.setBounds(472, 342, 96, 19);
-		contentPane.add(tipoSanguineoTF);
-		tipoSanguineoTF.setColumns(10);
-
-		JLabel campoEstadoCivilJLbl = new JLabel("Estado Civil:");
-		campoEstadoCivilJLbl.setBounds(370, 395, 79, 13);
-		contentPane.add(campoEstadoCivilJLbl);
-
-		estadoCivilTF = new JTextField();
-		estadoCivilTF.setBounds(472, 389, 96, 19);
-		contentPane.add(estadoCivilTF);
-		estadoCivilTF.setColumns(10);
-
-		JLabel campoNaturalidadeJLbl = new JLabel("Naturalidade:");
-		campoNaturalidadeJLbl.setBounds(370, 447, 72, 13);
-		contentPane.add(campoNaturalidadeJLbl);
-
-		naturalidadeTF = new JTextField();
-		naturalidadeTF.setBounds(472, 444, 96, 19);
-		contentPane.add(naturalidadeTF);
-		naturalidadeTF.setColumns(10);
-
-		JLabel NacionalidadeJLbl = new JLabel("Nacionalidade:");
-		NacionalidadeJLbl.setBounds(370, 492, 85, 13);
-		contentPane.add(NacionalidadeJLbl);
-
-		NacionalidadeTF = new JTextField();
-		NacionalidadeTF.setBounds(472, 489, 96, 19);
-		contentPane.add(NacionalidadeTF);
-		NacionalidadeTF.setColumns(10);
+		botaoInscricaoJButton.setBackground(Color.WHITE);
+		botaoInscricaoJButton.setForeground(Color.BLACK);
+		botaoInscricaoJButton.setBounds(125, 400, 111, 21);
+		contentPane.add(botaoInscricaoJButton);
 	}
 
 	public void inserirAluno() throws ClassNotFoundException, SQLException {
 //		CadastroAluno cadastroAluno = new CadastroAluno();
-		CadastroAluno.inserirAluno(usuarioTF.getText(), new String(senhaTF1.getPassword()), matriculaTF.getText(), NomeCivilTF.getText(), cursoTF.getText(),
-				emailTF.getText(), telefoneTF.getText(), NomeSocialTF.getText(), sexoTF.getText(),
-				dataNascimentoTF.getText(), estadoCivilTF.getText(), naturalidadeTF.getText(),
-				NacionalidadeTF.getText());
+		CadastroAluno.inserirAluno(usuarioTF.getText(), new String(senhaTF1.getPassword()), emailTF.getText(), telefoneTF.getText());
+
 	}
 
-	public static void inserirAluno(String usuario, String senha, String matricula, String nomeCivil, String curso,
-			String email, String telefone, String nomeSocial, String sexo, String dataNascimento, String estadoCivil,
-			String naturalidade, String nacionalidade) throws ClassNotFoundException, SQLException {
-			String sql = "INSERT INTO Aluno (usuario, senha, matricula, nomeCivil, curso, email, telefone, nomeSocial, sexo, dataNascimento, estadoCivil, naturalidade, nacionalidade)"
-					+ " VALUES (?,?,?,?,?,?,?,?,?,?,?,?,? )" ;
+	public static void inserirAluno(String usuario, String senha, String email, String telefone) throws ClassNotFoundException, SQLException {
+			String sql = "INSERT INTO Aluno (usuario, senha, email, telefone)"
+					+ " VALUES (?,?,?,?)" ;
 	
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			
@@ -280,18 +173,10 @@ public class CadastroAluno extends JFrame {
 				PreparedStatement pstmt = conn.prepareStatement(sql)) {
 		
 					pstmt.setString(1, usuario);
-					pstmt.setString(2, senha);
-					pstmt.setString(3, matricula);
-					pstmt.setString(4, nomeCivil);
-					pstmt.setString(5, curso);
-					pstmt.setString(6, email);
-					pstmt.setString(7, telefone);
-					pstmt.setString(8, nomeSocial);
-					pstmt.setString(9, sexo);
-					pstmt.setDate(10, Date.valueOf(LocalDate.parse(dataNascimento)));
-					pstmt.setString(11, estadoCivil);
-					pstmt.setString(12, naturalidade);
-					pstmt.setString(13, nacionalidade);
+					pstmt.setString(2, senha.toString());
+					
+					pstmt.setString(3, email);
+					pstmt.setString(4, telefone);
 		
 					pstmt.executeUpdate();
 					conn.close();
@@ -301,7 +186,8 @@ public class CadastroAluno extends JFrame {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-	}
+	}	
+
 	public static SimpleDateFormat getFormatData() {
 		return formatData;
 	}
@@ -309,5 +195,6 @@ public class CadastroAluno extends JFrame {
 	public static void setFormatData(SimpleDateFormat formatData) {
 		CadastroAluno.formatData = formatData;
 	}
+
 	private static SimpleDateFormat formatData = new SimpleDateFormat("dd/MM/yyyy");
 }
