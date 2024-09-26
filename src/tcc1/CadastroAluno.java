@@ -26,6 +26,8 @@ import javax.swing.JButton;
 import javax.swing.SwingConstants;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeEvent;
 
 public class CadastroAluno extends JFrame {
 
@@ -206,6 +208,10 @@ public class CadastroAluno extends JFrame {
 		sexoTF.setColumns(10);
 
 		dataNascimentoTF = new JTextField();
+		dataNascimentoTF.addPropertyChangeListener(new PropertyChangeListener() {
+			public void propertyChange(PropertyChangeEvent evt) {
+			}
+		});
 		dataNascimentoTF.setBounds(472, 300, 96, 19);
 		contentPane.add(dataNascimentoTF);
 		dataNascimentoTF.setColumns(10);

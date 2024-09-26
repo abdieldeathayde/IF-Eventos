@@ -100,27 +100,19 @@ public class Tela extends JFrame {
 		});
 		ButtonInscricao.setBackground(Color.GREEN);
 		
+		
+		
 		JButton ButtonUsuario = new JButton("");
 		ButtonUsuario.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				User usuario = new User();
+				usuario.setVisible(true);
+				dispose();
 			}
 		});
 		ButtonUsuario.setIcon(new ImageIcon(Tela.class.getResource("/tcc1/user-solid (1) 6.png")));
 		ButtonUsuario.setForeground(Color.WHITE);
 		ButtonUsuario.setBackground(Color.WHITE);
-		
-		JButton ButtonConfiguracoes = new JButton("");
-		ButtonConfiguracoes.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Configuracoes configuracoes = new Configuracoes();
-				configuracoes.setVisible(true);
-				dispose();
-			}
-		});
-		ButtonConfiguracoes.setIcon(new ImageIcon(Tela.class.getResource("/tcc1/Vector.png")));
-		ButtonConfiguracoes.setForeground(Color.WHITE);
-		ButtonConfiguracoes.setBackground(Color.WHITE);
 		
 		JButton ButtonInformacoes = new JButton("");
 		ButtonInformacoes.addActionListener(new ActionListener() {
@@ -166,8 +158,6 @@ public class Tela extends JFrame {
 						.addGroup(gl_contentPane.createSequentialGroup()
 							.addGap(78)
 							.addComponent(ButtonUsuario, GroupLayout.PREFERRED_SIZE, 53, GroupLayout.PREFERRED_SIZE)
-							.addGap(18)
-							.addComponent(ButtonConfiguracoes, GroupLayout.PREFERRED_SIZE, 53, GroupLayout.PREFERRED_SIZE)
 							.addGap(18)
 							.addComponent(ButtonInformacoes, GroupLayout.PREFERRED_SIZE, 53, GroupLayout.PREFERRED_SIZE)
 							.addGap(18)
@@ -240,7 +230,6 @@ public class Tela extends JFrame {
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
 						.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 							.addComponent(ButtonUsuario, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE)
-							.addComponent(ButtonConfiguracoes, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE)
 							.addComponent(ButtonInformacoes, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE))
 						.addComponent(ButtonAreaEstudante, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE))
 					.addGap(288))

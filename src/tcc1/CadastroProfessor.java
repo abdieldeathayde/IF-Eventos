@@ -33,7 +33,6 @@ public class CadastroProfessor extends JFrame {
 	private JPanel contentPane;
 	private JTextField usuarioTF;
 	private JPasswordField senhaTF1;
-	private JPasswordField senhaTF2;
 	private JTextField cargoTF;
 	private JTextField NomeCivilTF;
 	private JTextField faculdadeTF;
@@ -113,13 +112,7 @@ public class CadastroProfessor extends JFrame {
 		senhaTF1.setBounds(191, 244, 96, 19);
 		contentPane.add(senhaTF1);
 
-		JLabel campoSenhaTF2 = new JLabel("Repita a Senha:");
-		campoSenhaTF2.setBounds(44, 303, 111, 13);
-		contentPane.add(campoSenhaTF2);
-
-		senhaTF2 = new JPasswordField();
-		senhaTF2.setBounds(191, 300, 96, 19);
-		contentPane.add(senhaTF2);
+		
 
 		JLabel CampocargoTF = new JLabel("Cargo:");
 		CampocargoTF.setBounds(44, 345, 72, 13);
@@ -174,7 +167,9 @@ public class CadastroProfessor extends JFrame {
 				Login login = new Login();
 				login.setVisible(true);
 				try {
+					validarUsuarioESenha(usuarioTF.getText(), senhaTF1.getText());
 					inserirProfessor();
+					
 				} catch (ClassNotFoundException | SQLException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -218,11 +213,11 @@ public class CadastroProfessor extends JFrame {
 		contentPane.add(campoDataNascimentoJLbl);
 		
 		JLabel campoTipoSanguineoJLbl = new JLabel("Tipo Sanguineo:");
-		campoTipoSanguineoJLbl.setBounds(426, 237, 108, 13);
+		campoTipoSanguineoJLbl.setBounds(44, 303, 111, 13);
 		contentPane.add(campoTipoSanguineoJLbl);
 		
 		tipoSanguineoTF = new JTextField();
-		tipoSanguineoTF.setBounds(555, 234, 96, 19);
+		tipoSanguineoTF.setBounds(191, 300, 96, 19);
 		contentPane.add(tipoSanguineoTF);
 		tipoSanguineoTF.setColumns(10);
 		
@@ -260,6 +255,23 @@ public class CadastroProfessor extends JFrame {
 		CadastroProfessor.inserirProfessor(usuarioTF.getText(), emailTF.getText(), new String(senhaTF1.getPassword()), telefoneTF.getText(), cargoTF.getText(), NomeCivilTF.getText(), faculdadeTF.getText(),
 				dataNascimentoTF.getText(), tipoSanguineoTF.getText(), naturalidadeTF.getText(),
 				NacionalidadeTF.getText(), NomeSocialTF.getText(), sexoTF.getText());
+	}
+	
+	public void validarUsuarioESenha(String usuario, String senha) {
+		//Class.forName("com.mysql.cj.jdbc.Driver");
+		/*try (Connection conn = ConexaoDAO.conectaBD();
+				String sqlValidaSeUsuarioExiste = "SELECT ALUNO WHERE usuario = " + usuario;
+				PreparedStatement pstmt = conn.prepareStatement(sqlValidaSeUsuarioExiste)) {
+					
+					if (usuario == usuarioTF.getText().toString()) {
+						String sqlValidaSenha = "SELECT SENHA = " + senha + " WHERE USUARIO = " + usuario;
+						System.out.println("Usuario e senha conferem!");
+					}
+		}
+		*/
+		
+		
+		
 	}
 
 	public static void inserirProfessor(String usuario, String email, String senha, String telefone, String cargo, String nomeCivil, String faculdade, String dataNascimento, String tipoSanguineo,
