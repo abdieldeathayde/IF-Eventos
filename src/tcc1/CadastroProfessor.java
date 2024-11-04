@@ -99,10 +99,10 @@ public class CadastroProfessor extends JFrame {
 		contentPane.add(usuarioTF);
 		usuarioTF.setColumns(10);
 
-		JLabel campoSenhaTF1 = new JLabel("Senha:");
-		campoSenhaTF1.setFont(new Font("Tahoma", Font.BOLD, 10));
-		campoSenhaTF1.setBounds(44, 246, 45, 13);
-		contentPane.add(campoSenhaTF1);
+		JLabel campoSenhaJLBL = new JLabel("Senha:");
+		campoSenhaJLBL.setFont(new Font("Tahoma", Font.BOLD, 10));
+		campoSenhaJLBL.setBounds(44, 246, 45, 13);
+		contentPane.add(campoSenhaJLBL);
 
 		senhaTF1 = new JPasswordField();
 		senhaTF1.setBounds(191, 244, 96, 19);
@@ -190,7 +190,7 @@ public class CadastroProfessor extends JFrame {
 	}
 
 	public static void inserirProfessor(String usuario, char[] senha, String email,  String telefone, String dataNascimento) throws ClassNotFoundException, SQLException {
-			String sql = "INSERT INTO Professor (usuario, email, senha, telefone, dataNascimento)"
+			String sql = "INSERT INTO Professor (usuario, senha, email, telefone, dataNascimento)"
 					+ " VALUES (?,?,?,?,?)" ;
 	
 			Class.forName("com.mysql.cj.jdbc.Driver");

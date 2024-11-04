@@ -5,6 +5,7 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.text.MaskFormatter;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import java.awt.Color;
@@ -28,6 +29,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeEvent;
+import javax.swing.JFormattedTextField;
+import com.jgoodies.forms.factories.DefaultComponentFactory;
 
 public class CadastroAluno extends JFrame {
 
@@ -35,18 +38,8 @@ public class CadastroAluno extends JFrame {
 	private JPanel contentPane;
 	private JTextField usuarioTF;
 	private JPasswordField senhaTF1;
-	private JPasswordField senhaTF2;
-	private JTextField matriculaTF;
-	private JTextField NomeCivilTF;
-	private JTextField cursoTF;
-	private JTextField emailTF;
-	private JTextField telefoneTF;
-	private JTextField NomeSocialTF;
-	private JTextField sexoTF;
-	private JTextField dataNascimentoTF;
-	private JTextField estadoCivilTF;
-	private JTextField naturalidadeTF;
-	private JTextField NacionalidadeTF;
+	private JFormattedTextField emailTF;
+	private JFormattedTextField telefoneJFTF;
 
 	/**
 	 * * Launch the application.
@@ -85,56 +78,58 @@ public class CadastroAluno extends JFrame {
 		contentPane.setLayout(null);
 
 		JLabel logoIFSC = new JLabel("");
-		logoIFSC.setIcon(new ImageIcon(CadastroAluno.class.getResource("/tcc1/Ifsc.png")));
 		logoIFSC.setBounds(34, 33, 306, 117);
+		logoIFSC.setIcon(new ImageIcon(CadastroAluno.class.getResource("/tcc1/Ifsc.png")));
 		contentPane.add(logoIFSC);
 
 		JLabel textoIncricaoTF = new JLabel("Inscrição Aluno");
+		textoIncricaoTF.setBounds(139, 161, 199, 13);
 		textoIncricaoTF.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textoIncricaoTF.setForeground(Color.BLUE);
 		textoIncricaoTF.setBackground(Color.BLUE);
-		textoIncricaoTF.setBounds(139, 161, 199, 13);
 		contentPane.add(textoIncricaoTF);
 
 		JLabel campoUsuarioJLBL = new JLabel("Usuário:");
-		campoUsuarioJLBL.setFont(new Font("Tahoma", Font.BOLD, 10));
 		campoUsuarioJLBL.setBounds(44, 201, 45, 13);
+		campoUsuarioJLBL.setFont(new Font("Tahoma", Font.BOLD, 10));
 		contentPane.add(campoUsuarioJLBL);
 
 		usuarioTF = new JTextField();
-		usuarioTF.setBounds(191, 199, 96, 19);
+		usuarioTF.setBounds(191, 199, 266, 19);
 		contentPane.add(usuarioTF);
 		usuarioTF.setColumns(10);
 
 		JLabel campoSenhaJLBL = new JLabel("Senha:");
-		campoSenhaJLBL.setFont(new Font("Tahoma", Font.BOLD, 10));
 		campoSenhaJLBL.setBounds(44, 246, 45, 13);
+		campoSenhaJLBL.setFont(new Font("Tahoma", Font.BOLD, 10));
 		contentPane.add(campoSenhaJLBL);
 
 		senhaTF1 = new JPasswordField();
-		senhaTF1.setBounds(191, 244, 96, 19);
+		senhaTF1.setBounds(191, 244, 266, 19);
 		contentPane.add(senhaTF1);
 
 		JLabel campoEmailJLBL = new JLabel("Email:");
 		campoEmailJLBL.setBounds(44, 300, 45, 13);
 		contentPane.add(campoEmailJLBL);
 
-		emailTF = new JTextField();
-		emailTF.setBounds(191, 300, 96, 19);
+		emailTF = new JFormattedTextField(MascaraEmail("****************@aluno.ifsc.edu.br"));
+		emailTF.setBounds(191, 300, 266, 19);
 		contentPane.add(emailTF);
 		emailTF.setColumns(10);
 
 		JLabel campoTelefoneJLBL = new JLabel("Telefone");
-		campoTelefoneJLBL.setHorizontalAlignment(SwingConstants.LEFT);
 		campoTelefoneJLBL.setBounds(44, 340, 85, 13);
+		campoTelefoneJLBL.setHorizontalAlignment(SwingConstants.LEFT);
 		contentPane.add(campoTelefoneJLBL);
 
-		telefoneTF = new JTextField();
-		telefoneTF.setBounds(191, 340, 96, 19);
-		contentPane.add(telefoneTF);
-		telefoneTF.setColumns(10);
+		telefoneJFTF = new JFormattedTextField(Mascara("(***) ****-****"));
+		telefoneJFTF.setToolTipText("");
+		telefoneJFTF.setBounds(191, 340, 266, 19);
+		contentPane.add(telefoneJFTF);
+		telefoneJFTF.setColumns(10);
 
 		JButton botaoInscricaoJButton = new JButton("Inscrever");
+		botaoInscricaoJButton.setBounds(125, 400, 111, 21);
 		botaoInscricaoJButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Login login = new Login();
@@ -150,17 +145,16 @@ public class CadastroAluno extends JFrame {
 		});
 		botaoInscricaoJButton.setBackground(Color.WHITE);
 		botaoInscricaoJButton.setForeground(Color.BLACK);
-		botaoInscricaoJButton.setBounds(125, 400, 111, 21);
 		contentPane.add(botaoInscricaoJButton);
 	}
 
 	public void inserirAluno() throws ClassNotFoundException, SQLException {
 //		CadastroAluno cadastroAluno = new CadastroAluno();
-		CadastroAluno.inserirAluno(usuarioTF.getText(), new String(senhaTF1.getPassword()), emailTF.getText(), telefoneTF.getText());
+		CadastroAluno.inserirAluno(usuarioTF.getText(), senhaTF1.getPassword(), emailTF.getText(), telefoneJFTF.getText());
 
 	}
 
-	public static void inserirAluno(String usuario, String senha, String email, String telefone) throws ClassNotFoundException, SQLException {
+	public static void inserirAluno(String usuario, char[] senha, String email, String telefone) throws ClassNotFoundException, SQLException {
 			String sql = "INSERT INTO Aluno (usuario, senha, email, telefone)"
 					+ " VALUES (?,?,?,?)" ;
 	
@@ -195,6 +189,29 @@ public class CadastroAluno extends JFrame {
 	public static void setFormatData(SimpleDateFormat formatData) {
 		CadastroAluno.formatData = formatData;
 	}
+	
+	public MaskFormatter MascaraEmail(String EmailMascara) {
+		MaskFormatter F_Mascara = new MaskFormatter();
+		try {
+			F_Mascara.setMask(EmailMascara);
+			F_Mascara.setPlaceholderCharacter(' ');
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		return F_Mascara;
+	}
+	
+	
+	public MaskFormatter Mascara(String Mascara) {
+		MaskFormatter F_Mascara = new MaskFormatter();
+		try {
+			F_Mascara.setMask(Mascara);
+			F_Mascara.setPlaceholderCharacter(' ');
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return F_Mascara;
+}
 
 	private static SimpleDateFormat formatData = new SimpleDateFormat("dd/MM/yyyy");
 }
