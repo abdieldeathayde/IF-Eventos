@@ -20,6 +20,8 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.swing.JTextField;
 import javax.swing.JPasswordField;
@@ -40,6 +42,7 @@ public class CadastroAluno extends JFrame {
 	private JPasswordField senhaTF1;
 	private JFormattedTextField emailTF;
 	private JFormattedTextField telefoneJFTF;
+	private JLabel usuarioJLabel, campoEmailJLBL, telefoneJLabel; 
 
 	/**
 	 * * Launch the application.
@@ -98,6 +101,10 @@ public class CadastroAluno extends JFrame {
 		usuarioTF.setBounds(191, 199, 266, 19);
 		contentPane.add(usuarioTF);
 		usuarioTF.setColumns(10);
+		
+		String usuario = usuarioTF.toString();
+		boolean isUserValid = usuario.matches("^[a-zA-Z]{3,9}$");
+		System.out.println(isUserValid ? "Usuário válido" : "Usuário inválido");
 
 		JLabel campoSenhaJLBL = new JLabel("Senha:");
 		campoSenhaJLBL.setBounds(44, 246, 45, 13);
@@ -111,23 +118,38 @@ public class CadastroAluno extends JFrame {
 		JLabel campoEmailJLBL = new JLabel("Email:");
 		campoEmailJLBL.setBounds(44, 300, 45, 13);
 		contentPane.add(campoEmailJLBL);
-
+		
+		
+//		String email = "exemplo@aluno.ifsc.edu.br";
+		
+		
 		emailTF = new JFormattedTextField(MascaraEmail("****************@aluno.ifsc.edu.br"));
 		emailTF.setBounds(191, 300, 266, 19);
 		contentPane.add(emailTF);
 		emailTF.setColumns(10);
+		
+		String email = emailTF.toString();
+		boolean isValidEmail = email.matches("^[\\w\\.-]+@[a-zA-Z\\d\\.-]+\\.[a-zA-Z]{2,6}$");
+		System.out.println(isValidEmail ? "Email válido" : "Email inválido");
 
 		JLabel campoTelefoneJLBL = new JLabel("Telefone");
 		campoTelefoneJLBL.setBounds(44, 340, 85, 13);
 		campoTelefoneJLBL.setHorizontalAlignment(SwingConstants.LEFT);
 		contentPane.add(campoTelefoneJLBL);
+		
+		
 
 		telefoneJFTF = new JFormattedTextField(Mascara("(***) ****-****"));
 		telefoneJFTF.setToolTipText("");
 		telefoneJFTF.setBounds(191, 340, 266, 19);
 		contentPane.add(telefoneJFTF);
 		telefoneJFTF.setColumns(10);
-
+		
+		String telefone = telefoneJFTF.toString();
+		boolean isValidPhone = telefone.matches("^[0-9]$");
+		System.out.println(isValidPhone ? "Telefone válido" : "Telefone inválido");
+		
+		
 		JButton botaoInscricaoJButton = new JButton("Inscrever");
 		botaoInscricaoJButton.setBounds(125, 400, 111, 21);
 		botaoInscricaoJButton.addActionListener(new ActionListener() {
@@ -182,6 +204,26 @@ public class CadastroAluno extends JFrame {
 		}
 	}	
 
+	private void validarCampos() {
+		String email = emailTF.getText();
+		String telefone = telefoneJFTF.getText();
+		
+		
+		
+		campoEmail.setText(validarEmail(email) ? "Email válido" : "Email inválido");
+	}
+	
+	 private boolean validarEmail(String email) {
+	        String emailRegex = "^[\\w.-]+@[a-zA-Z\\d.-]+\\.[a-zA-Z]{2,6}$";
+	        return Pattern.matches(emailRegex, email);
+	    }
+
+	    private boolean validarTelefone(String phone) {
+	        String phoneRegex = "^\\(?\\d{2}\\)?[\\s-]?\\d{4,5}-\\d{4}$";
+	        return Pattern.matches(phoneRegex, phone);
+	    }
+	
+	
 	public static SimpleDateFormat getFormatData() {
 		return formatData;
 	}
@@ -189,6 +231,7 @@ public class CadastroAluno extends JFrame {
 	public static void setFormatData(SimpleDateFormat formatData) {
 		CadastroAluno.formatData = formatData;
 	}
+	 
 	
 	public MaskFormatter MascaraEmail(String EmailMascara) {
 		MaskFormatter F_Mascara = new MaskFormatter();
@@ -202,6 +245,8 @@ public class CadastroAluno extends JFrame {
 	}
 	
 	
+	
+	
 	public MaskFormatter Mascara(String Mascara) {
 		MaskFormatter F_Mascara = new MaskFormatter();
 		try {
@@ -211,7 +256,10 @@ public class CadastroAluno extends JFrame {
 			e.printStackTrace();
 		}
 		return F_Mascara;
-}
+	}
 
+	
+	
+	
 	private static SimpleDateFormat formatData = new SimpleDateFormat("dd/MM/yyyy");
 }
