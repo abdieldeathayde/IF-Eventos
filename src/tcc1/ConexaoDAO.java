@@ -27,9 +27,9 @@ public class ConexaoDAO {
 		}
     	return conn;
     }
-    public static void main(String[] args) throws Exception{
-		CadastroAluno.inserirAluno("abd","abd","abd","abd","abd","abd","abd","abd","abd","2022-01-01","abd","abd","abd");
-	}
+    //public static void main(String[] args) throws Exception{
+		//CadastroAluno.inserirAluno("abd","abd","abd","abd","abd","abd","abd","abd","abd","2022-01-01","abd","abd","abd");
+	//}
 
     
 }

@@ -5,7 +5,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.text.MaskFormatter;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
 import java.awt.Color;
 import java.awt.Font;
@@ -19,6 +21,8 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.swing.JTextField;
 import javax.swing.JPasswordField;
@@ -28,6 +32,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeEvent;
+import javax.swing.JFormattedTextField;
+import com.jgoodies.forms.factories.DefaultComponentFactory;
 
 public class CadastroAluno extends JFrame {
 
@@ -35,18 +41,9 @@ public class CadastroAluno extends JFrame {
 	private JPanel contentPane;
 	private JTextField usuarioTF;
 	private JPasswordField senhaTF1;
-	private JPasswordField senhaTF2;
-	private JTextField matriculaTF;
-	private JTextField NomeCivilTF;
-	private JTextField cursoTF;
-	private JTextField emailTF;
-	private JTextField telefoneTF;
-	private JTextField NomeSocialTF;
-	private JTextField sexoTF;
-	private JTextField dataNascimentoTF;
-	private JTextField estadoCivilTF;
-	private JTextField naturalidadeTF;
-	private JTextField NacionalidadeTF;
+	private static JFormattedTextField emailTF;
+	private static JFormattedTextField telefoneJFTF;
+	private JLabel campoUsuarioJLabel, campoEmailJLabel, telefoneJLabel; 
 
 	/**
 	 * * Launch the application.
@@ -85,82 +82,111 @@ public class CadastroAluno extends JFrame {
 		contentPane.setLayout(null);
 
 		JLabel logoIFSC = new JLabel("");
-		logoIFSC.setIcon(new ImageIcon(CadastroAluno.class.getResource("/tcc1/Ifsc.png")));
 		logoIFSC.setBounds(34, 33, 306, 117);
+		logoIFSC.setIcon(new ImageIcon(CadastroAluno.class.getResource("/tcc1/Ifsc.png")));
 		contentPane.add(logoIFSC);
 
 		JLabel textoIncricaoTF = new JLabel("Inscrição Aluno");
+		textoIncricaoTF.setBounds(139, 161, 199, 13);
 		textoIncricaoTF.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textoIncricaoTF.setForeground(Color.BLUE);
 		textoIncricaoTF.setBackground(Color.BLUE);
-		textoIncricaoTF.setBounds(139, 161, 199, 13);
 		contentPane.add(textoIncricaoTF);
 
-		JLabel campoUsuarioJLBL = new JLabel("Usuário:");
-		campoUsuarioJLBL.setFont(new Font("Tahoma", Font.BOLD, 10));
-		campoUsuarioJLBL.setBounds(44, 201, 45, 13);
-		contentPane.add(campoUsuarioJLBL);
+		
 
 		usuarioTF = new JTextField();
-		usuarioTF.setBounds(191, 199, 96, 19);
+		usuarioTF.setBounds(191, 199, 266, 19);
 		contentPane.add(usuarioTF);
 		usuarioTF.setColumns(10);
 
+
 		JLabel campoSenhaJLBL = new JLabel("Senha:");
-		campoSenhaJLBL.setFont(new Font("Tahoma", Font.BOLD, 10));
 		campoSenhaJLBL.setBounds(44, 246, 45, 13);
+		campoSenhaJLBL.setFont(new Font("Tahoma", Font.BOLD, 10));
 		contentPane.add(campoSenhaJLBL);
 
 		senhaTF1 = new JPasswordField();
-		senhaTF1.setBounds(191, 244, 96, 19);
+		senhaTF1.setBounds(191, 244, 266, 19);
 		contentPane.add(senhaTF1);
 
-		JLabel campoEmailJLBL = new JLabel("Email:");
-		campoEmailJLBL.setBounds(44, 300, 45, 13);
-		contentPane.add(campoEmailJLBL);
-
-		emailTF = new JTextField();
-		emailTF.setBounds(191, 300, 96, 19);
+		
+		
+		
+//		String email = "exemplo@aluno.ifsc.edu.br";
+		//MascaraEmail("****************@aluno.ifsc.edu.br")
+		
+		
+		emailTF = new JFormattedTextField();
+		emailTF.setBounds(191, 300, 266, 19);
 		contentPane.add(emailTF);
 		emailTF.setColumns(10);
+		
+		String email = emailTF.toString();
+		boolean isValidEmail = email.matches("^[\\w\\.-]+@[a-zA-Z\\d\\.-]+\\.[a-zA-Z]{2,6}$");
+//		System.out.println(isValidEmail ? "Email válido" : "Email inválido");
+		
 
-		JLabel campoTelefoneJLBL = new JLabel("Telefone");
-		campoTelefoneJLBL.setHorizontalAlignment(SwingConstants.LEFT);
-		campoTelefoneJLBL.setBounds(44, 340, 85, 13);
-		contentPane.add(campoTelefoneJLBL);
+		telefoneJFTF = new JFormattedTextField();
+		telefoneJFTF.setToolTipText("");
+		telefoneJFTF.setBounds(191, 340, 266, 19);
+		contentPane.add(telefoneJFTF);
+		telefoneJFTF.setColumns(10);
+		
+		
 
-		telefoneTF = new JTextField();
-		telefoneTF.setBounds(191, 340, 96, 19);
-		contentPane.add(telefoneTF);
-		telefoneTF.setColumns(10);
-
+		
+		
 		JButton botaoInscricaoJButton = new JButton("Inscrever");
+		botaoInscricaoJButton.setBounds(125, 400, 111, 21);
 		botaoInscricaoJButton.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
-				Login login = new Login();
-				login.setVisible(true);
+				String email = emailTF.getText();
+				String senha = new String(senhaTF1.getPassword());
+				
+				
+			
 				try {
+					validarCampos();
 					inserirAluno();
 				} catch (ClassNotFoundException | SQLException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
+				
 				dispose();
 			}
 		});
+		JLabel campoUsuarioJLBL = new JLabel("Usuário:");
+		campoUsuarioJLBL.setBounds(44, 201, 45, 13);
+		campoUsuarioJLBL.setFont(new Font("Tahoma", Font.BOLD, 10));
+		contentPane.add(campoUsuarioJLBL);
+		
+		JLabel campoEmailJLBL = new JLabel("Email:");
+		campoEmailJLBL.setBounds(44, 300, 45, 13);
+		contentPane.add(campoEmailJLBL);
+		
+		JLabel campoTelefoneJLBL = new JLabel("Telefone");
+		campoTelefoneJLBL.setBounds(44, 340, 85, 13);
+		campoTelefoneJLBL.setHorizontalAlignment(SwingConstants.LEFT);
+		contentPane.add(campoTelefoneJLBL);
+		
+		
+		
+		
 		botaoInscricaoJButton.setBackground(Color.WHITE);
 		botaoInscricaoJButton.setForeground(Color.BLACK);
-		botaoInscricaoJButton.setBounds(125, 400, 111, 21);
 		contentPane.add(botaoInscricaoJButton);
 	}
 
 	public void inserirAluno() throws ClassNotFoundException, SQLException {
 //		CadastroAluno cadastroAluno = new CadastroAluno();
-		CadastroAluno.inserirAluno(usuarioTF.getText(), new String(senhaTF1.getPassword()), emailTF.getText(), telefoneTF.getText());
+		CadastroAluno.inserirAluno(usuarioTF.getText(), senhaTF1.getPassword(), emailTF.getText(), telefoneJFTF.getText());
 
 	}
 
-	public static void inserirAluno(String usuario, String senha, String email, String telefone) throws ClassNotFoundException, SQLException {
+	public static void inserirAluno(String usuario, char[] senha, String email, String telefone) throws ClassNotFoundException, SQLException {
 			String sql = "INSERT INTO Aluno (usuario, senha, email, telefone)"
 					+ " VALUES (?,?,?,?)" ;
 	
@@ -186,15 +212,101 @@ public class CadastroAluno extends JFrame {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		
+		
 	}	
+	
+	/*
+	 * private static boolean validarCampos() {
+		// String usuario = usuarioTF.getText();
+		String email = emailTF.getText();
+		String telefone = telefoneTF.getText();
 
-	public static SimpleDateFormat getFormatData() {
-		return formatData;
+//
+//		System.out.println(validarEmail(email) ? "Email válido" : "Email inválido");
+//		System.out.println(validarTelefone(telefone) ? "Telefone válido" : "Telefone inválido");
+
+		
+	 */
+
+	private static boolean validarCampos() {
+			//String usuario = usuarioTF.getText();
+			String email = emailTF.getText();
+			
+			String telefone = telefoneJFTF.getText();
+			
+			
+			boolean isEmailValid = email.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$");
+//			
+			System.out.println(isEmailValid ? "Usuário válido" : "Usuário inválido");
+
+
+			
+
+			if (isEmailValid) {
+				JOptionPane.showMessageDialog(emailTF, "Email Sem erro!");
+
+			} else {
+				JOptionPane.showMessageDialog(emailTF, "Erro! Email no formato errado! tente novamente!");
+				return false;
+
+			}
+			return isEmailValid;
+
+			
+
+		
+			
+			
+		}
+	
+	 	private boolean validarEmail(String email) {
+	        String emailRegex = "^[\\w.-]+@[a-zA-Z\\d.-]+\\.[a-zA-Z]{2,6}$";
+	        return Pattern.matches(emailRegex, email);
+	    }
+
+	    private boolean validarTelefone(String phone) {
+	        String phoneRegex = "^\\(?\\d{2,9}\\)?[\\s-]?\\d{4,9}-\\d{4,9}$";
+	        return Pattern.matches(phoneRegex, phone);
+	    }
+	
+	
+	    public static SimpleDateFormat getFormatData() {
+	    	return formatData;
 	}
 
 	public static void setFormatData(SimpleDateFormat formatData) {
 		CadastroAluno.formatData = formatData;
 	}
+	 
+	
+	public MaskFormatter MascaraEmail(String EmailMascara) {
+		MaskFormatter F_Mascara = new MaskFormatter();
+		try {
+			F_Mascara.setMask(EmailMascara);
+			F_Mascara.setPlaceholderCharacter(' ');
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		return F_Mascara;
+	}
+	
+	
+	
+	
+	public MaskFormatter Mascara(String Mascara) {
+		MaskFormatter F_Mascara = new MaskFormatter();
+		try {
+			F_Mascara.setMask(Mascara);
+			F_Mascara.setPlaceholderCharacter(' ');
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return F_Mascara;
+	}
 
+	
+	
+	
 	private static SimpleDateFormat formatData = new SimpleDateFormat("dd/MM/yyyy");
 }
