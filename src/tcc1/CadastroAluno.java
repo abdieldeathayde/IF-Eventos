@@ -7,6 +7,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.text.MaskFormatter;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
 import java.awt.Color;
 import java.awt.Font;
@@ -40,8 +41,8 @@ public class CadastroAluno extends JFrame {
 	private JPanel contentPane;
 	private JTextField usuarioTF;
 	private JPasswordField senhaTF1;
-	private JFormattedTextField emailTF;
-	private JFormattedTextField telefoneJFTF;
+	private static JFormattedTextField emailTF;
+	private static JFormattedTextField telefoneJFTF;
 	private JLabel campoUsuarioJLabel, campoEmailJLabel, telefoneJLabel; 
 
 	/**
@@ -141,7 +142,11 @@ public class CadastroAluno extends JFrame {
 		botaoInscricaoJButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				String email = emailTF.getText();
+				String senha = new String(senhaTF1.getPassword());
 				
+				
+			
 				try {
 					validarCampos();
 					inserirAluno();
@@ -210,20 +215,47 @@ public class CadastroAluno extends JFrame {
 		
 		
 	}	
+	
+	/*
+	 * private static boolean validarCampos() {
+		// String usuario = usuarioTF.getText();
+		String email = emailTF.getText();
+		String telefone = telefoneTF.getText();
 
-	private void validarCampos() {
+//
+//		System.out.println(validarEmail(email) ? "Email válido" : "Email inválido");
+//		System.out.println(validarTelefone(telefone) ? "Telefone válido" : "Telefone inválido");
+
+		
+	 */
+
+	private static boolean validarCampos() {
 			//String usuario = usuarioTF.getText();
 			String email = emailTF.getText();
+			
 			String telefone = telefoneJFTF.getText();
 			
 			
-			System.out.println(validarEmail(email) ? "Email válido" : "Email inválido");
-			System.out.println(validarTelefone(telefone) ? "Telefone válido" : "Telefone inválido");
+			boolean isEmailValid = email.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$");
+//			
+			System.out.println(isEmailValid ? "Usuário válido" : "Usuário inválido");
+
+
 			
+
+			if (isEmailValid) {
+				JOptionPane.showMessageDialog(emailTF, "Email Sem erro!");
+
+			} else {
+				JOptionPane.showMessageDialog(emailTF, "Erro! Email no formato errado! tente novamente!");
+				return false;
+
+			}
+			return isEmailValid;
+
 			
-			
-			//boolean isEmailValid = email.matches("^[a-zA-Z]{3,9}$");
-			//System.out.println(isEmailValid ? "Usuário válido" : "Usuário inválido");
+
+		
 			
 			
 		}
