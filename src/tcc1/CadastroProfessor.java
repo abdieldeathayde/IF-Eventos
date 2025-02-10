@@ -192,18 +192,20 @@ public class CadastroProfessor extends JFrame {
 
 		Boolean isValidCPF = cpf.matches("^\\d{3}\\.\\d{3}\\.\\d{3}-\\d{2}$");
 		
-		Boolean isValidTelefone = telefone.matches("^\\\\(?\\\\d{2,9}\\\\)?[\\\\s-]?\\\\d{4,9}-\\\\d{4,9}$");
+		Boolean isValidTelefone = telefone.matches("^\\(?\\d{2}\\)?[\\s-]?\\d{4,5}[-]?\\d{4}$");
 
-		System.out.println(isValidCPF ? "CPF válido" : "CPF inválido");
+		//System.out.println(isValidCPF ? "CPF válido" : "CPF inválido");
 
 		if (isEmailValid) {
-			JOptionPane.showMessageDialog(emailTF, "Email Sem erro!");
+			JOptionPane.showMessageDialog(emailTF, "Email cadastrado com sucesso!");
+			
 
 		} else {
-			JOptionPane.showMessageDialog(emailTF, "Erro! Email no formato errado! tente novamente!");
+			JOptionPane.showMessageDialog(emailTF, "Erro! Email inválido ou já cadastrado! Tente novamente!");
 			return false;
 
 		}
+		
 
 		if (isValidCPF) {
 			JOptionPane.showMessageDialog(cpfTF, " cpf sem erro!");
@@ -216,36 +218,24 @@ public class CadastroProfessor extends JFrame {
 		
 		
 		
+		
 		if (isValidTelefone) {
 			JOptionPane.showMessageDialog(telefoneTF, "Telefone sem erro!");
 		} else {
 			JOptionPane.showMessageDialog(telefoneTF, "Erro! Telefone no formato errado! Tente novamente!");
+			return false;
 		}
+		
+		return isValidTelefone;
 
 //		JOptionPane.showMessageDialog(emailTF, "Usuario cadastrado com sucesso!");
 
-		return true;
+		
 		// colocar texto com Joptionpane
 
 	}
 
-//	public void inserirProfessor(String usuario, String email, String senha, String telefone, String dataNascimento) throws ClassNotFoundException, SQLException {
-//		CadastroProfessor cadastroProfessor = new CadastroProfessor();
-//		cadastroProfessor.inserirProfessor(usuario, email, senha, telefone, dataNascimento);
-//	}
-	/*
-	 * private boolean validarUsuarioESenha(String usuario, String senha) { String
-	 * url = "jdbc:mysql://localhost:3306/usuarios_db"; String user = "root"; String
-	 * password = "88567731a";
-	 * 
-	 * try (Connection conn = ConexaoDAO.conectaBD(); String
-	 * sqlValidaSeUsuarioExiste = "SELECT ALUNO WHERE usuario = " + usuario;
-	 * PreparedStatement pstmt = conn.prepareStatement(sqlValidaSeUsuarioExiste)) {
-	 * 
-	 * if (usuario == usuarioTF.getText().toString()) { String sqlValidaSenha =
-	 * "SELECT SENHA = " + senha + " WHERE USUARIO = " + usuario;
-	 * System.out.println("Usuario e senha conferem!"); } }
-	 */
+
 
 	private boolean validarEmail(String email) {
 		String emailRegex = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
