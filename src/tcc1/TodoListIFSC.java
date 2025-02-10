@@ -16,7 +16,7 @@ import javax.swing.JProgressBar;
 
 public class TodoListIFSC extends JFrame {
 	
-	JProgressBar progressBar = new JProgressBar();
+	JProgressBar progressBar =  new JProgressBar();
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;

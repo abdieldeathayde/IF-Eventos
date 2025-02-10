@@ -1,39 +1,31 @@
 package tcc1;
 
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.text.MaskFormatter;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.ImageIcon;
 import java.awt.Color;
+import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.net.URL;
-import java.sql.*;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import javax.swing.JTextField;
-import javax.swing.JPasswordField;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.SwingConstants;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import java.beans.PropertyChangeListener;
-import java.beans.PropertyChangeEvent;
 import javax.swing.JFormattedTextField;
-import com.jgoodies.forms.factories.DefaultComponentFactory;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+import javax.swing.border.EmptyBorder;
+import javax.swing.text.MaskFormatter;
 
 public class CadastroAluno extends JFrame {
 
@@ -72,6 +64,7 @@ public class CadastroAluno extends JFrame {
 	 * Create the frame.
 	 */
 	public CadastroAluno() {
+		setTitle("IFSC-Eventos");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 920, 682);
 		contentPane = new JPanel();
@@ -207,7 +200,7 @@ public class CadastroAluno extends JFrame {
 					pstmt.executeUpdate();
 					conn.close();
 
-			System.out.println("Aluno inserido 	com sucesso!");
+			//System.out.println("Aluno inserido 	com sucesso!");
 
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -237,21 +230,34 @@ public class CadastroAluno extends JFrame {
 			
 			
 			boolean isEmailValid = email.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$");
-//			
-			System.out.println(isEmailValid ? "Usuário válido" : "Usuário inválido");
+
+			boolean isTelefoneValid = telefone.matches("^\\(?\\d{2}\\)?[\\s-]?\\d{4,5}[-]?\\d{4}$");
+					
+			//System.out.println(isEmailValid ? "Usuário válido" : "Usuário inválido");
 
 
 			
 
 			if (isEmailValid) {
-				JOptionPane.showMessageDialog(emailTF, "Email Sem erro!");
+				JOptionPane.showMessageDialog(emailTF, "Email cadastrado com sucesso!");
+				
 
 			} else {
-				JOptionPane.showMessageDialog(emailTF, "Erro! Email no formato errado! tente novamente!");
+				JOptionPane.showMessageDialog(emailTF, "Erro! Email inválido ou Já cadastrado! Tente novamente!");
 				return false;
 
 			}
-			return isEmailValid;
+			
+			if (isTelefoneValid) {
+				JOptionPane.showMessageDialog(telefoneJFTF, "Telefone cadastrado com sucesso!");
+				
+			} else {
+				JOptionPane.showMessageDialog(telefoneJFTF, "Telefone inválido ou já cadastrado! Tente novamente!");
+				return false;
+			}
+			return isTelefoneValid;
+			
+		
 
 			
 
