@@ -95,14 +95,18 @@ public class Tela extends JFrame {
 		
 		
 		
-		
-		
-		
-		PerfilUsuario frame = new PerfilUsuario();
+//		PerfilUsuario frame = new PerfilUsuario();
 		
 		JLabel imagem = new JLabel("");
-		imagem.setBounds(490, 141, 300, 350);
+		imagem.setBounds(390, 210, 300, 350);
+		
+		
+		
 		imagem.setIcon(new ImageIcon(CadastroAluno.class.getResource("/tcc1/user-solid (1) 6.png")));
+		
+		
+		
+		contentPane.add(imagem);
 		
 		
 		JButton btnAlteraImagem = new JButton("Escolher Imagem: ");
@@ -111,6 +115,8 @@ public class Tela extends JFrame {
 				
 		
 				PerfilUsuario frame = new PerfilUsuario();
+							
+				
 				
 				imagem.setIcon(new ImageIcon((frame.carregarUltimaImagem())));
 				contentPane.add(imagem);
@@ -124,7 +130,7 @@ public class Tela extends JFrame {
 				
 			}
 		});
-		btnAlteraImagem.setBounds(607, 360, 185, 80);
+		btnAlteraImagem.setBounds(607, 500, 185, 80);
 		contentPane.add(btnAlteraImagem);
 	
 		
@@ -193,6 +199,8 @@ public class Tela extends JFrame {
 		
 		JLabel LabelDivisor2 = new JLabel("");
 		LabelDivisor2.setIcon(new ImageIcon("C:\\Users\\Athay\\Downloads\\Line 6.png"));
+		
+		
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
@@ -209,38 +217,42 @@ public class Tela extends JFrame {
 							.addGap(18)
 							.addComponent(ButtonAreaEstudante, GroupLayout.PREFERRED_SIZE, 53, GroupLayout.PREFERRED_SIZE))
 						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(69)
 							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 								.addGroup(gl_contentPane.createSequentialGroup()
-									.addComponent(LabelLogoNoticias, GroupLayout.PREFERRED_SIZE, 200, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.RELATED)
-									.addComponent(LabelTextoNoticias, GroupLayout.PREFERRED_SIZE, 130, GroupLayout.PREFERRED_SIZE))
-								.addGroup(gl_contentPane.createSequentialGroup()
-									.addComponent(LabelLogoIFSC, GroupLayout.PREFERRED_SIZE, 268, GroupLayout.PREFERRED_SIZE)
-									.addGap(26)
-									.addComponent(ButtonMenu, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE))
-								.addGroup(gl_contentPane.createSequentialGroup()
-									.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-										.addComponent(LabelCampoCursoOfertado, GroupLayout.PREFERRED_SIZE, 78, GroupLayout.PREFERRED_SIZE)
-										.addComponent(LabelCampoArea, GroupLayout.PREFERRED_SIZE, 77, GroupLayout.PREFERRED_SIZE)
-										.addComponent(LabelCampoPrazo, GroupLayout.PREFERRED_SIZE, 77, GroupLayout.PREFERRED_SIZE))
 									.addGap(69)
 									.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-										.addComponent(LabelDescricaoPrazo, GroupLayout.PREFERRED_SIZE, 85, GroupLayout.PREFERRED_SIZE)
-										.addComponent(LabelDescricaoArea, GroupLayout.PREFERRED_SIZE, 129, GroupLayout.PREFERRED_SIZE)
-										.addComponent(LabelNomeCurso, GroupLayout.PREFERRED_SIZE, 80, GroupLayout.PREFERRED_SIZE)))))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(39)
-							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-								.addComponent(LabelDivisor2, GroupLayout.PREFERRED_SIZE, 376, GroupLayout.PREFERRED_SIZE)
-								.addComponent(LabelDivisor, GroupLayout.PREFERRED_SIZE, 376, GroupLayout.PREFERRED_SIZE))))
-					.addContainerGap(963, Short.MAX_VALUE))
+										.addGroup(gl_contentPane.createSequentialGroup()
+											.addComponent(LabelLogoNoticias, GroupLayout.PREFERRED_SIZE, 200, GroupLayout.PREFERRED_SIZE)
+											.addPreferredGap(ComponentPlacement.RELATED)
+											.addComponent(LabelTextoNoticias, GroupLayout.PREFERRED_SIZE, 130, GroupLayout.PREFERRED_SIZE))
+										.addGroup(gl_contentPane.createSequentialGroup()
+											.addComponent(LabelLogoIFSC, GroupLayout.PREFERRED_SIZE, 268, GroupLayout.PREFERRED_SIZE)
+											.addGap(26)
+											.addComponent(ButtonMenu, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE))
+										.addGroup(gl_contentPane.createSequentialGroup()
+											.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+												.addComponent(LabelCampoCursoOfertado, GroupLayout.PREFERRED_SIZE, 78, GroupLayout.PREFERRED_SIZE)
+												.addComponent(LabelCampoArea, GroupLayout.PREFERRED_SIZE, 77, GroupLayout.PREFERRED_SIZE)
+												.addComponent(LabelCampoPrazo, GroupLayout.PREFERRED_SIZE, 77, GroupLayout.PREFERRED_SIZE))
+											.addGap(69)
+											.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+												.addComponent(LabelDescricaoPrazo, GroupLayout.PREFERRED_SIZE, 85, GroupLayout.PREFERRED_SIZE)
+												.addComponent(LabelDescricaoArea, GroupLayout.PREFERRED_SIZE, 129, GroupLayout.PREFERRED_SIZE)
+												.addComponent(LabelNomeCurso, GroupLayout.PREFERRED_SIZE, 80, GroupLayout.PREFERRED_SIZE)))))
+								.addGroup(gl_contentPane.createSequentialGroup()
+									.addGap(39)
+									.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+										.addComponent(LabelDivisor2, GroupLayout.PREFERRED_SIZE, 376, GroupLayout.PREFERRED_SIZE)
+										.addComponent(LabelDivisor, GroupLayout.PREFERRED_SIZE, 376, GroupLayout.PREFERRED_SIZE))))
+							.addGap(202)
+							.addComponent(imagem, GroupLayout.PREFERRED_SIZE, 300, GroupLayout.PREFERRED_SIZE)))
+					.addContainerGap(461, Short.MAX_VALUE))
 		);
 		gl_contentPane.setVerticalGroup(
 			gl_contentPane.createParallelGroup(Alignment.TRAILING)
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addComponent(LabelLogoIFSC, GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
+						.addComponent(LabelLogoIFSC, GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
 						.addGroup(gl_contentPane.createSequentialGroup()
 							.addGap(43)
 							.addComponent(ButtonMenu, GroupLayout.PREFERRED_SIZE, 64, GroupLayout.PREFERRED_SIZE)))
@@ -279,6 +291,9 @@ public class Tela extends JFrame {
 							.addComponent(ButtonInformacoes, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE))
 						.addComponent(ButtonAreaEstudante, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE))
 					.addGap(288))
+				.addGroup(Alignment.LEADING, gl_contentPane.createSequentialGroup()
+					.addComponent(imagem, GroupLayout.PREFERRED_SIZE, 350, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap())
 		);
 		contentPane.setLayout(gl_contentPane);
 		

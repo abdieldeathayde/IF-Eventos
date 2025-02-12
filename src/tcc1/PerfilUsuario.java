@@ -8,7 +8,11 @@ import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
 
 public class PerfilUsuario extends JFrame {
-    private JLabel lblImagem;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private JLabel lblImagem;
     private JButton btnEscolherImagem;
     private final String DIRETORIO_IMAGENS = "perfil_usuario/";
     private final String CONFIG_PATH = "config.txt";
