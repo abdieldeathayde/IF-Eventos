@@ -93,12 +93,58 @@ public class Tela extends JFrame {
 		JLabel LabelDescricaoPrazo = new JLabel("08/03/2024");
 		LabelDescricaoPrazo.setFont(new Font("Tahoma", Font.ITALIC, 10));
 		
+		
+		
+		
+		
+		
+		PerfilUsuario frame = new PerfilUsuario();
+		
+		JLabel imagem = new JLabel("");
+		imagem.setBounds(490, 141, 300, 350);
+		imagem.setIcon(new ImageIcon(CadastroAluno.class.getResource("/tcc1/user-solid (1) 6.png")));
+		
+		
+		JButton btnAlteraImagem = new JButton("Escolher Imagem: ");
+		btnAlteraImagem.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+		
+				PerfilUsuario frame = new PerfilUsuario();
+				
+				imagem.setIcon(new ImageIcon((frame.carregarUltimaImagem())));
+				contentPane.add(imagem);
+				
+					
+					
+				
+				
+				
+				
+				
+			}
+		});
+		btnAlteraImagem.setBounds(607, 360, 185, 80);
+		contentPane.add(btnAlteraImagem);
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		JButton ButtonInscricao = new JButton("Quero me inscrver!");
 		ButtonInscricao.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
 		ButtonInscricao.setBackground(Color.GREEN);
+		
 		
 		
 		
