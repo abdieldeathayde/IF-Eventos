@@ -60,7 +60,7 @@ public class Tela extends JFrame {
 	public Tela() {
 		setTitle("IFSC-Eventos");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 556, 619);
+		setBounds(100, 100, 956, 619);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(255, 255, 255));
 		contentPane.setForeground(Color.WHITE);
@@ -69,30 +69,39 @@ public class Tela extends JFrame {
 		setContentPane(contentPane);
 		
 		JLabel LabelLogoIFSC = new JLabel("");
+		LabelLogoIFSC.setBounds(74, 5, 268, 107);
 		LabelLogoIFSC.setIcon(new ImageIcon(Tela.class.getResource("/tcc1/image 8.png")));
 		
 		JLabel LabelDivisor = new JLabel("");
+		LabelDivisor.setBounds(44, 256, 376, 6);
 		LabelDivisor.setIcon(new ImageIcon("C:\\Users\\Athay\\Downloads\\Line 6.png"));
 		
 		JLabel LabelLogoNoticias = new JLabel("");
+		LabelLogoNoticias.setBounds(74, 130, 200, 108);
 		LabelLogoNoticias.setIcon(new ImageIcon(Tela.class.getResource("/tcc1/ebook2 2.png")));
 		
 		JLabel LabelCampoCursoOfertado = new JLabel("Curso ofertado");
+		LabelCampoCursoOfertado.setBounds(74, 281, 78, 13);
 		LabelCampoCursoOfertado.setFont(new Font("Tahoma", Font.BOLD, 10));
 		
 		JLabel LabelCampoArea = new JLabel("Área:");
+		LabelCampoArea.setBounds(74, 304, 77, 13);
 		LabelCampoArea.setFont(new Font("Tahoma", Font.BOLD, 10));
 		
 		JLabel LabelNomeCurso = new JLabel("FIC Inglês");
+		LabelNomeCurso.setBounds(221, 273, 80, 13);
 		LabelNomeCurso.setFont(new Font("Tahoma", Font.ITALIC, 10));
 		
 		JLabel LabelDescricaoArea = new JLabel("Qualificação Profissional");
+		LabelDescricaoArea.setBounds(221, 296, 129, 13);
 		LabelDescricaoArea.setFont(new Font("Tahoma", Font.ITALIC, 10));
 		
 		JLabel LabelCampoPrazo = new JLabel("Inscrições até");
+		LabelCampoPrazo.setBounds(74, 323, 77, 13);
 		LabelCampoPrazo.setFont(new Font("Tahoma", Font.BOLD, 10));
 		
 		JLabel LabelDescricaoPrazo = new JLabel("08/03/2024");
+		LabelDescricaoPrazo.setBounds(221, 319, 85, 13);
 		LabelDescricaoPrazo.setFont(new Font("Tahoma", Font.ITALIC, 10));
 		
 		
@@ -100,7 +109,7 @@ public class Tela extends JFrame {
 		PerfilUsuario frame = new PerfilUsuario();
 		
 		JLabel imagem = new JLabel("");
-		imagem.setBounds(390, 210, 200, 350);
+		imagem.setBounds(632, 5, 300, 350);
 
 		
 		
@@ -110,6 +119,7 @@ public class Tela extends JFrame {
 		
 		
 		JButton btnAlteraImagem = new JButton("Escolher Imagem: ");
+		btnAlteraImagem.setBounds(390, 310, 185, 80);
 		btnAlteraImagem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -138,7 +148,6 @@ public class Tela extends JFrame {
 				
 			}
 		});
-		btnAlteraImagem.setBounds(390, 310, 185, 80);
 //		btnAlteraImagem.setBound
 		contentPane.add(btnAlteraImagem);
 	
@@ -221,6 +230,7 @@ class LoginScreen extends JFrame {
 		
 		
 		JButton ButtonInscricao = new JButton("Quero me inscrver!");
+		ButtonInscricao.setBounds(133, 396, 145, 21);
 		ButtonInscricao.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
@@ -231,6 +241,7 @@ class LoginScreen extends JFrame {
 		
 		
 		JButton ButtonUsuario = new JButton("");
+		ButtonUsuario.setBounds(74, 507, 53, 65);
 		ButtonUsuario.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				User usuario = new User();
@@ -243,6 +254,7 @@ class LoginScreen extends JFrame {
 		ButtonUsuario.setBackground(Color.WHITE);
 		
 		JButton ButtonInformacoes = new JButton("");
+		ButtonInformacoes.setBounds(221, 507, 59, 65);
 		ButtonInformacoes.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				TiraDuvidas tiraDuvidas = new TiraDuvidas();
@@ -255,6 +267,7 @@ class LoginScreen extends JFrame {
 		ButtonInformacoes.setBackground(Color.WHITE);
 		
 		JButton ButtonAreaEstudante = new JButton("");
+		ButtonAreaEstudante.setBounds(345, 507, 65, 65);
 		ButtonAreaEstudante.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
@@ -263,9 +276,11 @@ class LoginScreen extends JFrame {
 		ButtonAreaEstudante.setBackground(Color.WHITE);
 		
 		JLabel LabelTextoNoticias = new JLabel("Noticias Recentes");
+		LabelTextoNoticias.setBounds(280, 163, 130, 17);
 		LabelTextoNoticias.setFont(new Font("Tahoma", Font.BOLD, 14));
 		
 		JButton ButtonMenu = new JButton("");
+		ButtonMenu.setBounds(368, 48, 70, 64);
 		ButtonMenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
@@ -274,104 +289,27 @@ class LoginScreen extends JFrame {
 		ButtonMenu.setBackground(Color.WHITE);
 		
 		JLabel LabelDivisor2 = new JLabel("");
+		LabelDivisor2.setBounds(44, 446, 376, 6);
 		LabelDivisor2.setIcon(new ImageIcon("C:\\Users\\Athay\\Downloads\\Line 6.png"));
-		
-		
-		GroupLayout gl_contentPane = new GroupLayout(contentPane);
-		gl_contentPane.setHorizontalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(128)
-							.addComponent(ButtonInscricao, GroupLayout.PREFERRED_SIZE, 145, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(78)
-							.addComponent(ButtonUsuario, GroupLayout.PREFERRED_SIZE, 53, GroupLayout.PREFERRED_SIZE)
-							.addGap(18)
-							.addComponent(ButtonInformacoes, GroupLayout.PREFERRED_SIZE, 53, GroupLayout.PREFERRED_SIZE)
-							.addGap(18)
-							.addComponent(ButtonAreaEstudante, GroupLayout.PREFERRED_SIZE, 53, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-								.addGroup(gl_contentPane.createSequentialGroup()
-									.addGap(69)
-									.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-										.addGroup(gl_contentPane.createSequentialGroup()
-											.addComponent(LabelLogoNoticias, GroupLayout.PREFERRED_SIZE, 200, GroupLayout.PREFERRED_SIZE)
-											.addPreferredGap(ComponentPlacement.RELATED)
-											.addComponent(LabelTextoNoticias, GroupLayout.PREFERRED_SIZE, 130, GroupLayout.PREFERRED_SIZE))
-										.addGroup(gl_contentPane.createSequentialGroup()
-											.addComponent(LabelLogoIFSC, GroupLayout.PREFERRED_SIZE, 268, GroupLayout.PREFERRED_SIZE)
-											.addGap(26)
-											.addComponent(ButtonMenu, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE))
-										.addGroup(gl_contentPane.createSequentialGroup()
-											.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-												.addComponent(LabelCampoCursoOfertado, GroupLayout.PREFERRED_SIZE, 78, GroupLayout.PREFERRED_SIZE)
-												.addComponent(LabelCampoArea, GroupLayout.PREFERRED_SIZE, 77, GroupLayout.PREFERRED_SIZE)
-												.addComponent(LabelCampoPrazo, GroupLayout.PREFERRED_SIZE, 77, GroupLayout.PREFERRED_SIZE))
-											.addGap(69)
-											.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-												.addComponent(LabelDescricaoPrazo, GroupLayout.PREFERRED_SIZE, 85, GroupLayout.PREFERRED_SIZE)
-												.addComponent(LabelDescricaoArea, GroupLayout.PREFERRED_SIZE, 129, GroupLayout.PREFERRED_SIZE)
-												.addComponent(LabelNomeCurso, GroupLayout.PREFERRED_SIZE, 80, GroupLayout.PREFERRED_SIZE)))))
-								.addGroup(gl_contentPane.createSequentialGroup()
-									.addGap(39)
-									.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-										.addComponent(LabelDivisor2, GroupLayout.PREFERRED_SIZE, 376, GroupLayout.PREFERRED_SIZE)
-										.addComponent(LabelDivisor, GroupLayout.PREFERRED_SIZE, 376, GroupLayout.PREFERRED_SIZE))))
-							.addGap(202)
-							.addComponent(imagem, GroupLayout.PREFERRED_SIZE, 300, GroupLayout.PREFERRED_SIZE)))
-					.addContainerGap(461, Short.MAX_VALUE))
-		);
-		gl_contentPane.setVerticalGroup(
-			gl_contentPane.createParallelGroup(Alignment.TRAILING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addComponent(LabelLogoIFSC, GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(43)
-							.addComponent(ButtonMenu, GroupLayout.PREFERRED_SIZE, 64, GroupLayout.PREFERRED_SIZE)))
-					.addGap(18)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addComponent(LabelTextoNoticias, GroupLayout.PREFERRED_SIZE, 17, GroupLayout.PREFERRED_SIZE)
-							.addGap(58))
-						.addComponent(LabelLogoNoticias, GroupLayout.PREFERRED_SIZE, 108, GroupLayout.PREFERRED_SIZE))
-					.addGap(18)
-					.addComponent(LabelDivisor, GroupLayout.PREFERRED_SIZE, 6, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(19)
-							.addComponent(LabelCampoCursoOfertado)
-							.addPreferredGap(ComponentPlacement.UNRELATED)
-							.addComponent(LabelCampoArea)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(LabelCampoPrazo))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(11)
-							.addComponent(LabelNomeCurso)
-							.addPreferredGap(ComponentPlacement.UNRELATED)
-							.addComponent(LabelDescricaoArea)
-							.addPreferredGap(ComponentPlacement.UNRELATED)
-							.addComponent(LabelDescricaoPrazo)))
-					.addGap(60)
-					.addComponent(ButtonInscricao)
-					.addGap(29)
-					.addComponent(LabelDivisor2, GroupLayout.PREFERRED_SIZE, 6, GroupLayout.PREFERRED_SIZE)
-					.addGap(30)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
-						.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-							.addComponent(ButtonUsuario, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE)
-							.addComponent(ButtonInformacoes, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE))
-						.addComponent(ButtonAreaEstudante, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE))
-					.addGap(288))
-				.addGroup(Alignment.LEADING, gl_contentPane.createSequentialGroup()
-					.addComponent(imagem, GroupLayout.PREFERRED_SIZE, 350, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap())
-		);
-		contentPane.setLayout(gl_contentPane);
+		contentPane.setLayout(null);
+		contentPane.add(btnAlteraImagem);
+		contentPane.add(ButtonInscricao);
+		contentPane.add(ButtonUsuario);
+		contentPane.add(ButtonInformacoes);
+		contentPane.add(ButtonAreaEstudante);
+		contentPane.add(LabelLogoNoticias);
+		contentPane.add(LabelTextoNoticias);
+		contentPane.add(LabelLogoIFSC);
+		contentPane.add(ButtonMenu);
+		contentPane.add(LabelCampoCursoOfertado);
+		contentPane.add(LabelCampoArea);
+		contentPane.add(LabelCampoPrazo);
+		contentPane.add(LabelDescricaoPrazo);
+		contentPane.add(LabelDescricaoArea);
+		contentPane.add(LabelNomeCurso);
+		contentPane.add(LabelDivisor2);
+		contentPane.add(LabelDivisor);
+		contentPane.add(imagem);
 		
 	
 	}
