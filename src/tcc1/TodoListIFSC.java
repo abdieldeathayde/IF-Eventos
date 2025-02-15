@@ -14,81 +14,88 @@ import javax.swing.ImageIcon;
 import java.awt.Color;
 import javax.swing.JProgressBar;
 
-public class TodoListIFSC extends JFrame {
-	
-	JProgressBar progressBar =  new JProgressBar();
 
-	private static final long serialVersionUID = 1L;
-	private JPanel contentPane;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					TodoListIFSC frame = new TodoListIFSC();
-					URL caminhoImagem = this.getClass().getResource("IfscLogo.png");
-					Image iconeTitulo = Toolkit.getDefaultToolkit().getImage(caminhoImagem);
-					
-					frame.setIconImage(iconeTitulo);
-					
-					
+	public class TodoListIFSC extends JFrame {
+	    private DefaultListModel<String> listModel;
+	    private JList<String> taskList;
+	    private JProgressBar progressBar;
+	    private ArrayList<Boolean> taskCompletionStatus;
+	    private int completedTasks = 0;
 
-					// ("C:Users/Athay/OneDrive/Imagens/Capturas de tela/Ifsc.png");
-					frame.setTitle("IFSC-Eventos");
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+	    public TodoListIFSC() {
+	        setTitle("Lista de Tarefas com ProgressBar");
+	        setSize(400, 400);
+	        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	        setLayout(new BorderLayout());
+
+	        listModel = new DefaultListModel<>();
+	        taskList = new JList<>(listModel);
+	        JScrollPane scrollPane = new JScrollPane(taskList);
+
+	        progressBar = new JProgressBar(0, 100);
+	        progressBar.setStringPainted(true);
+
+	        taskCompletionStatus = new ArrayList<>();
+
+	        JTextField taskField = new JTextField();
+	        JButton addButton = new JButton("Adicionar");
+	        JButton completeButton = new JButton("Concluir");
+
+	        JPanel inputPanel = new JPanel(new BorderLayout());
+	        inputPanel.add(taskField, BorderLayout.CENTER);
+	        inputPanel.add(addButton, BorderLayout.EAST);
+
+	        JPanel buttonPanel = new JPanel(new FlowLayout());
+	        buttonPanel.add(completeButton);
+
+	        add(scrollPane, BorderLayout.CENTER);
+	        add(progressBar, BorderLayout.SOUTH);
+	        add(inputPanel, BorderLayout.NORTH);
+	        add(buttonPanel, BorderLayout.SOUTH);
+
+	        // Adicionar nova tarefa
+	        addButton.addActionListener(e -> {
+	            String task = taskField.getText().trim();
+	            if (!task.isEmpty()) {
+	                listModel.addElement(task);
+	                taskCompletionStatus.add(false);
+	                updateProgressBar();
+	                taskField.setText("");
+	            }
+	        });
+
+	        // Marcar como concluída
+	        completeButton.addActionListener(e -> {
+	            int selectedIndex = taskList.getSelectedIndex();
+	            if (selectedIndex != -1 && !taskCompletionStatus.get(selectedIndex)) {
+	                taskCompletionStatus.set(selectedIndex, true);
+	                listModel.set(selectedIndex, "[✔] " + listModel.get(selectedIndex));
+	                completedTasks++;
+	                updateProgressBar();
+	            }
+	        });
+
+	        setVisible(true);
+	    }
+
+	    public void updateProgressBar() {
+	        int totalTasks = taskCompletionStatus.size();
+	        int progress = (totalTasks == 0) ? 0 : (completedTasks * 100) / totalTasks;
+	        progressBar.setValue(progress);
+	    }
+	    
+	    
+
+	    public static void main(String[] args) {
+	        SwingUtilities.invokeLater(TodoListIFSC::new);
+	        
+	       
+	    }
 	}
 
-	/**
-	 * Create the frame.
-	 */
-	public TodoListIFSC() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 870, 592);
-		contentPane = new JPanel();
-		contentPane.setBackground(Color.WHITE);
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-
-		setContentPane(contentPane);
-		contentPane.setLayout(null);
-		
-		JLabel lblNewLabel = new JLabel("Search");
-		lblNewLabel.setBackground(Color.GRAY);
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\Athay\\Downloads\\material-symbols_search.png"));
-		lblNewLabel.setBounds(35, 21, 281, 50);
-		contentPane.add(lblNewLabel);
-		
-		
-		progressBar.setBounds(35, 102, 500, 50);
-		progressBar.setStringPainted(true);
-		progressBar.setValue(50);
-		progressBar.setMaximum(1000);
-		progressBar.setForeground(Color.GREEN);
-		contentPane.add(progressBar);
-	}
-	
-	public class Temporizador extends Thread {
-		public void run() {
-			while(progressBar.getValue() < 1000) {
-				try {
-					sleep(10);
-					progressBar.setValue((progressBar.getValue()) + 10);
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}
-			
-			
-		}
-	}
-	
-	
-}

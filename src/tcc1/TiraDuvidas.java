@@ -3,6 +3,8 @@ package tcc1;
 import java.awt.EventQueue;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.net.URL;
 
 import javax.swing.JFrame;
@@ -54,11 +56,13 @@ public class TiraDuvidas extends JFrame {
 	 * Create the frame.
 	 */
 	public TiraDuvidas() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 556, 619);
+		setTitle("IFSC-Eventos");
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		setBounds(100, 100, 1050, 619);
 		contentPane = new JPanel();
-		contentPane.setBackground(Color.WHITE);
-		contentPane.setBorder(new EmptyBorder(5, 5, 556, 619));
+		contentPane.setBackground(new Color(255, 255, 255));
+		contentPane.setForeground(Color.WHITE);
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
 		
@@ -77,56 +81,77 @@ public class TiraDuvidas extends JFrame {
 		tfDuvida = new JTextField();
 		tfDuvida.setColumns(10);
 		
+		
 		JButton btnLivro = new JButton("");
 		btnLivro.setBackground(Color.WHITE);
 		btnLivro.setIcon(new ImageIcon(TiraDuvidas.class.getResource("/tcc1/user-solid (1) 6.png")));
+		btnLivro.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				User usuario = new User();
+				usuario.setVisible(true);
+				dispose();
+			}
+		});
+		getContentPane().add(btnLivro);
+		setVisible(true);
 		
-		JButton btnConfiguracoes = new JButton("");
-		btnConfiguracoes.setBackground(Color.WHITE);
-		btnConfiguracoes.setIcon(new ImageIcon(TiraDuvidas.class.getResource("/tcc1/Vector.png")));
+		
 		
 		JButton btnInformacoes = new JButton("");
 		btnInformacoes.setBackground(Color.WHITE);
 		btnInformacoes.setIcon(new ImageIcon(TiraDuvidas.class.getResource("/tcc1/circle-info-solid (1) 5.png")));
 		
+		
+		
 		JButton btnProgresso = new JButton("");
 		btnProgresso.setBackground(Color.WHITE);
 		btnProgresso.setIcon(new ImageIcon(TiraDuvidas.class.getResource("/tcc1/livro 3.png")));
+		btnProgresso.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				TodoListIFSC lista = new TodoListIFSC();
+				lista.setVisible(true);
+				dispose();
+			}
+		});
+		getContentPane().add(btnLivro);
+		setVisible(true);
+		
+		
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addContainerGap()
 					.addComponent(lblInformeTitulo)
-					.addContainerGap(1529, Short.MAX_VALUE))
+					.addContainerGap(1441, Short.MAX_VALUE))
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addContainerGap()
 					.addComponent(tfTitulo, GroupLayout.PREFERRED_SIZE, 311, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(1297, Short.MAX_VALUE))
+					.addContainerGap(1209, Short.MAX_VALUE))
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addContainerGap()
 					.addComponent(lblElaboraPergunta)
-					.addContainerGap(1506, Short.MAX_VALUE))
+					.addContainerGap(1418, Short.MAX_VALUE))
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addContainerGap()
 					.addComponent(tfDuvida, GroupLayout.PREFERRED_SIZE, 311, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(1297, Short.MAX_VALUE))
+					.addContainerGap(1209, Short.MAX_VALUE))
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addGap(32)
-					.addComponent(btnLivro)
-					.addGap(46)
-					.addComponent(btnConfiguracoes)
-					.addGap(64)
-					.addComponent(btnInformacoes, GroupLayout.PREFERRED_SIZE, 59, GroupLayout.PREFERRED_SIZE)
+					.addComponent(btnLivro, GroupLayout.PREFERRED_SIZE, 73, GroupLayout.PREFERRED_SIZE)
+					.addGap(82)
+					.addComponent(btnInformacoes, GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
 					.addGap(69)
 					.addComponent(btnProgresso)
-					.addContainerGap(1173, Short.MAX_VALUE))
+					.addGap(1080))
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addGap(20)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
+						.addGroup(gl_contentPane.createSequentialGroup()
 							.addGap(10)
-							.addComponent(lblExplicacao, GroupLayout.DEFAULT_SIZE, 1578, Short.MAX_VALUE)
+							.addComponent(lblExplicacao, GroupLayout.DEFAULT_SIZE, 1490, Short.MAX_VALUE)
 							.addContainerGap())
 						.addGroup(gl_contentPane.createSequentialGroup()
 							.addComponent(lblLogo)
@@ -145,15 +170,16 @@ public class TiraDuvidas extends JFrame {
 					.addComponent(tfTitulo, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 					.addGap(18)
 					.addComponent(lblElaboraPergunta)
-					.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+					.addPreferredGap(ComponentPlacement.RELATED)
 					.addComponent(tfDuvida, GroupLayout.PREFERRED_SIZE, 66, GroupLayout.PREFERRED_SIZE)
 					.addGap(96)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addComponent(btnLivro)
-						.addComponent(btnConfiguracoes)
-						.addComponent(btnInformacoes, GroupLayout.PREFERRED_SIZE, 35, GroupLayout.PREFERRED_SIZE)
-						.addComponent(btnProgresso))
-					.addGap(89))
+						.addComponent(btnLivro, GroupLayout.PREFERRED_SIZE, 65, GroupLayout.PREFERRED_SIZE)
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addComponent(btnInformacoes, GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
+							.addGap(0))
+						.addComponent(btnProgresso, GroupLayout.PREFERRED_SIZE, 52, Short.MAX_VALUE))
+					.addGap(10))
 		);
 		contentPane.setLayout(gl_contentPane);
 	}
