@@ -118,49 +118,26 @@ public class Tela extends JFrame {
 				
 				//imagem.setIcon(new ImageIcon((frame.carregarUltimaImagem())));
 				
+				String caminhoImagem = frame.carregarUltimaImagem();
 				
-				JFrame jframe = new JFrame("Foto do Perfil redonda");
-				jframe.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-				jframe.setSize(300, 300);
+				ImageIcon imagemRedonda = ImageUtils.criarImagemRedonda(caminhoImagem, 200);
 				
-				PerfilRedondo perfil = new PerfilRedondo(frame.carregarUltimaImagem());
-				
-				
-				imagem.setIcon(new ImageIcon(frame.carregarUltimaImagem()));
-				
-				
-				jframe.add(perfil);
-				jframe.setVisible(true);
-				
-				
-				
+				if (imagemRedonda != null) {
+					imagem.setIcon(imagemRedonda);
+				}
 				
 				contentPane.add(imagem);
 				
-			
-				
-				
-				
-				
-			
+
 				
 				
 				
 			
-				
 			
-		
-				
-					
-					
-				
-				
-				
-				
 				
 			}
 		});
-		btnAlteraImagem.setBounds(607, 500, 185, 80);
+		btnAlteraImagem.setBounds(350, 390, 185, 80);
 		contentPane.add(btnAlteraImagem);
 	
 		
