@@ -49,16 +49,22 @@ public class CadastroAluno extends JFrame {
 					Image iconeTitulo = Toolkit.getDefaultToolkit().getImage(caminhoImagem);
 
 					frame.setIconImage(iconeTitulo);
+					
+					
 
 					// ("C:Users/Athay/OneDrive/Imagens/Capturas de tela/Ifsc.png");
 					frame.setTitle("IFSC-Eventos");
 					frame.setVisible(true);
+					
+					
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
 		});
 	}
+	
+	
 
 	/**
 	 * Create the frame.
@@ -85,6 +91,8 @@ public class CadastroAluno extends JFrame {
 		textoIncricaoTF.setForeground(Color.BLUE);
 		textoIncricaoTF.setBackground(Color.BLUE);
 		contentPane.add(textoIncricaoTF);
+		
+//		String AVATAR_PADRAO = "user-solid (1) 6.png";
 
 		
 
@@ -102,7 +110,11 @@ public class CadastroAluno extends JFrame {
 		senhaTF1 = new JPasswordField();
 		senhaTF1.setBounds(191, 244, 266, 19);
 		contentPane.add(senhaTF1);
+		
 
+
+		
+		
 		
 		
 		
@@ -171,6 +183,8 @@ public class CadastroAluno extends JFrame {
 		botaoInscricaoJButton.setBackground(Color.WHITE);
 		botaoInscricaoJButton.setForeground(Color.BLACK);
 		contentPane.add(botaoInscricaoJButton);
+		
+		
 	}
 
 	public void inserirAluno() throws ClassNotFoundException, SQLException {

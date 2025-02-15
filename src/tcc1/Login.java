@@ -76,6 +76,10 @@ public class Login extends JFrame {
 		LoginLabel.setBounds(108, 145, 159, 13);
 		contentPane.add(LoginLabel);
 		
+		
+
+
+		
 		Login = new JTextField();
 		Login.setBounds(183, 197, 96, 19);
 		contentPane.add(Login);
