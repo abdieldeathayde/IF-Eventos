@@ -5,14 +5,18 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.imageio.ImageIO;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
+import javax.swing.Icon;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import java.awt.Color;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.awt.geom.Ellipse2D;
+import java.awt.image.BufferedImage;
 import java.net.URL;
 import java.awt.event.ActionEvent;
 import javax.swing.SwingConstants;
@@ -37,10 +41,8 @@ public class Tela extends JFrame {
 					Tela frame = new Tela();
 					URL caminhoImagem = this.getClass().getResource("IfscLogo.png");
 					Image iconeTitulo = Toolkit.getDefaultToolkit().getImage(caminhoImagem);
-					
+
 					frame.setIconImage(iconeTitulo);
-					
-					
 
 					// ("C:Users/Athay/OneDrive/Imagens/Capturas de tela/Ifsc.png");
 					frame.setTitle("IFSC-Eventos");
@@ -95,10 +97,10 @@ public class Tela extends JFrame {
 		
 		
 		
-//		PerfilUsuario frame = new PerfilUsuario();
+		PerfilUsuario frame = new PerfilUsuario();
 		
 		JLabel imagem = new JLabel("");
-		imagem.setBounds(390, 210, 300, 350);
+		imagem.setBounds(390, 210, 200, 350);
 		
 		
 		
@@ -106,20 +108,48 @@ public class Tela extends JFrame {
 		
 		
 		
-		contentPane.add(imagem);
-		
-		
 		JButton btnAlteraImagem = new JButton("Escolher Imagem: ");
 		btnAlteraImagem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
 		
-				PerfilUsuario frame = new PerfilUsuario();
-							
+				 PerfilUsuario frame = new PerfilUsuario();
 				
 				
-				imagem.setIcon(new ImageIcon((frame.carregarUltimaImagem())));
+				//imagem.setIcon(new ImageIcon((frame.carregarUltimaImagem())));
+				
+				
+				JFrame jframe = new JFrame("Foto do Perfil redonda");
+				jframe.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+				jframe.setSize(300, 300);
+				
+				PerfilRedondo perfil = new PerfilRedondo(frame.carregarUltimaImagem());
+				
+				
+				imagem.setIcon(new ImageIcon(frame.carregarUltimaImagem()));
+				
+				
+				jframe.add(perfil);
+				jframe.setVisible(true);
+				
+				
+				
+				
 				contentPane.add(imagem);
+				
+			
+				
+				
+				
+				
+			
+				
+				
+				
+			
+				
+			
+		
 				
 					
 					
@@ -134,11 +164,78 @@ public class Tela extends JFrame {
 		contentPane.add(btnAlteraImagem);
 	
 		
+		JButton btnSair = new JButton("Sair da conta:");
+		
+		
+		btnSair.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+//				Login login = new Login();
+//				login.();
+				
+			}
+		});
 		
 		
 		
-		
-		
+		/*
+		 * import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class LogoutExample extends JFrame {
+    public LogoutExample() {
+        setTitle("Sistema");
+        setSize(300, 200);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+
+        JButton btnLogout = new JButton("Logout");
+        btnLogout.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int confirm = JOptionPane.showConfirmDialog(
+                    null,
+                    "Deseja realmente sair?",
+                    "Confirmação",
+                    JOptionPane.YES_NO_OPTION
+                );
+                
+                if (confirm == JOptionPane.YES_OPTION) {
+                    dispose(); // Fecha a janela atual
+                    new LoginScreen(); // Retorna para a tela de login
+                }
+            }
+        });
+
+        setLayout(new FlowLayout());
+        add(btnLogout);
+        setVisible(true);
+    }
+
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(() -> new LogoutExample());
+    }
+}
+
+class LoginScreen extends JFrame {
+    public LoginScreen() {
+        setTitle("Login");
+        setSize(300, 150);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+
+        JLabel lblMessage = new JLabel("Tela de Login");
+        add(lblMessage);
+
+        setLayout(new FlowLayout());
+        setVisible(true);
+    }
+}
+
+		 */
 		
 		
 		
