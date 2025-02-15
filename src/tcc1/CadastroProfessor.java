@@ -141,11 +141,11 @@ public class CadastroProfessor extends JFrame {
 		telefoneTF.setColumns(10);
 
 		JLabel campoDataNascimentoJLbl = new JLabel("Data Nascimento:");
-		campoDataNascimentoJLbl.setBounds(44, 400, 96, 13);
+		campoDataNascimentoJLbl.setBounds(44, 400, 116, 13);
 		contentPane.add(campoDataNascimentoJLbl);
 
 		dataNascimentoTF = new JTextField();
-		dataNascimentoTF.setBounds(191, 400, 96, 19);
+		dataNascimentoTF.setBounds(191, 397, 96, 19);
 		contentPane.add(dataNascimentoTF);
 		dataNascimentoTF.setColumns(10);
 

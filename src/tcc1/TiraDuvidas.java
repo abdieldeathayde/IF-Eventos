@@ -3,6 +3,8 @@ package tcc1;
 import java.awt.EventQueue;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.net.URL;
 
 import javax.swing.JFrame;
@@ -54,11 +56,13 @@ public class TiraDuvidas extends JFrame {
 	 * Create the frame.
 	 */
 	public TiraDuvidas() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setTitle("IFSC-Eventos");
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 556, 619);
 		contentPane = new JPanel();
-		contentPane.setBackground(Color.WHITE);
-		contentPane.setBorder(new EmptyBorder(5, 5, 556, 619));
+		contentPane.setBackground(new Color(255, 255, 255));
+		contentPane.setForeground(Color.WHITE);
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
 		
@@ -77,9 +81,20 @@ public class TiraDuvidas extends JFrame {
 		tfDuvida = new JTextField();
 		tfDuvida.setColumns(10);
 		
+		
 		JButton btnLivro = new JButton("");
 		btnLivro.setBackground(Color.WHITE);
 		btnLivro.setIcon(new ImageIcon(TiraDuvidas.class.getResource("/tcc1/user-solid (1) 6.png")));
+		btnLivro.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				User usuario = new User();
+				usuario.setVisible(true);
+				dispose();
+			}
+		});
+		add(btnLivro);
+		setVisible(true);
 		
 		JButton btnConfiguracoes = new JButton("");
 		btnConfiguracoes.setBackground(Color.WHITE);

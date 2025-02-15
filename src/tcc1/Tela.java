@@ -101,6 +101,7 @@ public class Tela extends JFrame {
 		
 		JLabel imagem = new JLabel("");
 		imagem.setBounds(390, 210, 200, 350);
+
 		
 		
 		
@@ -137,7 +138,8 @@ public class Tela extends JFrame {
 				
 			}
 		});
-		btnAlteraImagem.setBounds(350, 390, 185, 80);
+		btnAlteraImagem.setBounds(390, 310, 185, 80);
+//		btnAlteraImagem.setBound
 		contentPane.add(btnAlteraImagem);
 	
 		
