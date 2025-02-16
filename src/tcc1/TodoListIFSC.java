@@ -32,13 +32,15 @@ import java.util.ArrayList;
 	        setTitle("Lista de Tarefas com ProgressBar");
 	        setSize(400, 400);
 	        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	        setLayout(new BorderLayout());
+	        getContentPane().setLayout(new BorderLayout());
 
 	        listModel = new DefaultListModel<>();
 	        taskList = new JList<>(listModel);
 	        JScrollPane scrollPane = new JScrollPane(taskList);
 
 	        progressBar = new JProgressBar(0, 100);
+	        progressBar.setForeground(Color.GREEN);
+	        progressBar.setBackground(Color.GREEN);
 	        progressBar.setStringPainted(true);
 
 	        taskCompletionStatus = new ArrayList<>();
@@ -54,10 +56,10 @@ import java.util.ArrayList;
 	        JPanel buttonPanel = new JPanel(new FlowLayout());
 	        buttonPanel.add(completeButton);
 
-	        add(scrollPane, BorderLayout.CENTER);
-	        add(progressBar, BorderLayout.SOUTH);
-	        add(inputPanel, BorderLayout.NORTH);
-	        add(buttonPanel, BorderLayout.SOUTH);
+	        getContentPane().add(scrollPane, BorderLayout.CENTER);
+	        getContentPane().add(progressBar, BorderLayout.EAST);
+	        getContentPane().add(inputPanel, BorderLayout.NORTH);
+	        getContentPane().add(buttonPanel, BorderLayout.SOUTH);
 
 	        // Adicionar nova tarefa
 	        addButton.addActionListener(e -> {
