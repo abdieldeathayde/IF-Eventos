@@ -43,8 +43,8 @@ import java.util.ArrayList;
 	        JScrollPane scrollPane = new JScrollPane(taskList);
 
 	        progressBar = new JProgressBar(0, 100);
-	        progressBar.setForeground(Color.GREEN);
-	        progressBar.setBackground(Color.GREEN);
+	        progressBar.setForeground(Color.RED);
+	        progressBar.setBackground(Color.RED);
 	        progressBar.setStringPainted(true);
 
 	        taskCompletionStatus = new ArrayList<>();
