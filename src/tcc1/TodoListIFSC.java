@@ -22,7 +22,11 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 	public class TodoListIFSC extends JFrame {
-	    private DefaultListModel<String> listModel;
+	    /**
+		 * 
+		 */
+		private static final long serialVersionUID = 1L;
+		private DefaultListModel<String> listModel;
 	    private JList<String> taskList;
 	    private JProgressBar progressBar;
 	    private ArrayList<Boolean> taskCompletionStatus;
