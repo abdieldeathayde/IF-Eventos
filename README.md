@@ -23,6 +23,6 @@ O IFSC eventos é um aplicativo desenvolvido para cadastro de alunos e professor
 
 
 
-- Outra opção é baixando um arquivo .zip contendo o projeto
+- Outra opção é baixando uma pasta com a extensão ".zip" contendo o projeto
 
 <img src="BaixandoViaArquivoZip.png" width="610px" alt ="Baixando projeto Via Zip" />
