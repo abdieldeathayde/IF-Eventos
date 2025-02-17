@@ -21,7 +21,8 @@ O IFSC Eventos é um aplicativo desenvolvido para alunos e professores, oferecen
 <img src="clonando-via-https.png" width="610px" alt="Clonando via HTTPs" />
 <br /> <br /> <br />
 
-
+<img src = "git-clone-repo.png" width="610px" alt="git clone via Prompt de comandos" />
+<br /> <br /> <br />
 
 - Outra opção é baixando uma pasta com a extensão ".zip" contendo o projeto
 
@@ -33,3 +34,16 @@ O IFSC Eventos é um aplicativo desenvolvido para alunos e professores, oferecen
 <img src="clonando-via-ssh.png" width="610px" alt="Clonando Via SSH" />
 <br /> <br /> <br />
 
+
+<img src="clonando-repositorio-eclipse.png" width="610px" alt="Importando projeto eclipse" />
+<br /> <br /> <br />
+
+
+<img src="importando-do-eclipse.png" width="610px" alt="imprtando do GitHub" />
+<br /> <br /> <br />
+
+<img src="github-eclipse.png" width="610px" alt="escolhendo repositorio" />
+<br /> <br /> <br />
+
+<img src="Finish.png" with="610px" alt="botao finish">
+<br /><br /> <br />
