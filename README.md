@@ -2,7 +2,7 @@
 
 ## Sistema para Eventos de Extensão do IFSC Campus Gaspar
 
-O IFSC eventos é um aplicativo desenvolvido para cadastro de alunos e professores no aplicativo, organizar suas rotinas de estudos com um ToDo List e mostra a porcentagem de conclusões das tarefas, login, inclusão de uma imagem da preferência do aluno.
+O IFSC Eventos é um aplicativo desenvolvido para alunos e professores, oferecendo ferramentas para organizar a rotina de estudos. Com ele, é possível cadastrar usuários, gerenciar tarefas por meio de uma To-Do List e acompanhar o progresso com a porcentagem de conclusão de cada atividade. Além disso, o app permite login e a personalização do perfil com uma imagem de preferência do usuário.
 
 ### Tecnologias utilizadas:
 - Java: foi escolhida essa linguagem por ter uma forte comunidade de desenvolvedores, mostrando que é uma linguagem muito utilizada nas áreas profissional e acadêmica.
