@@ -179,13 +179,11 @@ public class CadastroProfessor extends JFrame {
 		String email = emailTF.getText();
 		String telefone = telefoneTF.getText();
 
-//
-//		System.out.println(validarEmail(email) ? "Email válido" : "Email inválido");
-//		System.out.println(validarTelefone(telefone) ? "Telefone válido" : "Telefone inválido");
+
 
 		boolean isEmailValid = email.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$");
 		
-		//		System.out.println(isEmailValid ? "Usuário válido" : "Usuário inválido");
+	
 		
 
 		String cpf = cpfTF.getText();
@@ -194,7 +192,6 @@ public class CadastroProfessor extends JFrame {
 		
 		Boolean isValidTelefone = telefone.matches("^\\(?\\d{2}\\)?[\\s-]?\\d{4,5}[-]?\\d{4}$");
 
-		//System.out.println(isValidCPF ? "CPF válido" : "CPF inválido");
 
 		if (isEmailValid) {
 			JOptionPane.showMessageDialog(emailTF, "Email cadastrado com sucesso!");
@@ -228,10 +225,7 @@ public class CadastroProfessor extends JFrame {
 		
 		return isValidTelefone;
 
-//		JOptionPane.showMessageDialog(emailTF, "Usuario cadastrado com sucesso!");
 
-		
-		// colocar texto com Joptionpane
 
 	}
 
@@ -253,9 +247,7 @@ public class CadastroProfessor extends JFrame {
 
 		Class.forName("com.mysql.cj.jdbc.Driver");
 
-//		if (!validarCampos()) {
-//			return;
-//		}
+
 
 		try (Connection conn = ConexaoDAO.conectaBD();
 
@@ -272,7 +264,7 @@ public class CadastroProfessor extends JFrame {
 			pstmt.executeUpdate();
 			conn.close();
 
-//			System.out.println("Professor inserido com sucesso!");
+
 
 		} catch (SQLException e) {
 			e.printStackTrace();

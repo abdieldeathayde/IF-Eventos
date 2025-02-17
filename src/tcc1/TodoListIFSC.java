@@ -65,7 +65,7 @@ import java.util.ArrayList;
 	        getContentPane().add(inputPanel, BorderLayout.NORTH);
 	        getContentPane().add(buttonPanel, BorderLayout.SOUTH);
 
-	        // Adicionar nova tarefa
+	        
 	        addButton.addActionListener(e -> {
 	            String task = taskField.getText().trim();
 	            if (!task.isEmpty()) {
@@ -76,7 +76,7 @@ import java.util.ArrayList;
 	            }
 	        });
 
-	        // Marcar como concluída
+	        
 	        completeButton.addActionListener(e -> {
 	            int selectedIndex = taskList.getSelectedIndex();
 	            if (selectedIndex != -1 && !taskCompletionStatus.get(selectedIndex)) {

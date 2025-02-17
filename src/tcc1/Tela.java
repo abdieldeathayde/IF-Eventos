@@ -44,7 +44,7 @@ public class Tela extends JFrame {
 
 					frame.setIconImage(iconeTitulo);
 
-					// ("C:Users/Athay/OneDrive/Imagens/Capturas de tela/Ifsc.png");
+					
 					frame.setTitle("IFSC-Eventos");
 					frame.setVisible(true);
 				} catch (Exception e) {
@@ -126,9 +126,6 @@ public class Tela extends JFrame {
 		
 				 PerfilUsuario frame = new PerfilUsuario();
 				
-				
-				//imagem.setIcon(new ImageIcon((frame.carregarUltimaImagem())));
-				
 				String caminhoImagem = frame.carregarUltimaImagem();
 				
 				ImageIcon imagemRedonda = ImageUtils.criarImagemRedonda(caminhoImagem, 200);
@@ -167,63 +164,6 @@ public class Tela extends JFrame {
 		
 		
 		
-		/*
-		 * import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
-public class LogoutExample extends JFrame {
-    public LogoutExample() {
-        setTitle("Sistema");
-        setSize(300, 200);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLocationRelativeTo(null);
-
-        JButton btnLogout = new JButton("Logout");
-        btnLogout.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                int confirm = JOptionPane.showConfirmDialog(
-                    null,
-                    "Deseja realmente sair?",
-                    "Confirmação",
-                    JOptionPane.YES_NO_OPTION
-                );
-                
-                if (confirm == JOptionPane.YES_OPTION) {
-                    dispose(); // Fecha a janela atual
-                    new LoginScreen(); // Retorna para a tela de login
-                }
-            }
-        });
-
-        setLayout(new FlowLayout());
-        add(btnLogout);
-        setVisible(true);
-    }
-
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> new LogoutExample());
-    }
-}
-
-class LoginScreen extends JFrame {
-    public LoginScreen() {
-        setTitle("Login");
-        setSize(300, 150);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLocationRelativeTo(null);
-
-        JLabel lblMessage = new JLabel("Tela de Login");
-        add(lblMessage);
-
-        setLayout(new FlowLayout());
-        setVisible(true);
-    }
-}
-
-		 */
 		
 		
 		

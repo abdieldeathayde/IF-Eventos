@@ -52,7 +52,7 @@ public class CadastroAluno extends JFrame {
 					
 					
 
-					// ("C:Users/Athay/OneDrive/Imagens/Capturas de tela/Ifsc.png");
+					
 					frame.setTitle("IFSC-Eventos");
 					frame.setVisible(true);
 					
@@ -92,7 +92,7 @@ public class CadastroAluno extends JFrame {
 		textoIncricaoTF.setBackground(Color.BLUE);
 		contentPane.add(textoIncricaoTF);
 		
-//		String AVATAR_PADRAO = "user-solid (1) 6.png";
+
 
 		
 
@@ -110,16 +110,7 @@ public class CadastroAluno extends JFrame {
 		senhaTF1 = new JPasswordField();
 		senhaTF1.setBounds(191, 244, 266, 19);
 		contentPane.add(senhaTF1);
-		
 
-
-		
-		
-		
-		
-		
-//		String email = "exemplo@aluno.ifsc.edu.br";
-		//MascaraEmail("****************@aluno.ifsc.edu.br")
 		
 		
 		emailTF = new JFormattedTextField();
@@ -129,7 +120,7 @@ public class CadastroAluno extends JFrame {
 		
 		String email = emailTF.toString();
 		boolean isValidEmail = email.matches("^[\\w\\.-]+@[a-zA-Z\\d\\.-]+\\.[a-zA-Z]{2,6}$");
-//		System.out.println(isValidEmail ? "Email válido" : "Email inválido");
+
 		
 
 		telefoneJFTF = new JFormattedTextField();
@@ -188,7 +179,7 @@ public class CadastroAluno extends JFrame {
 	}
 
 	public void inserirAluno() throws ClassNotFoundException, SQLException {
-//		CadastroAluno cadastroAluno = new CadastroAluno();
+
 		CadastroAluno.inserirAluno(usuarioTF.getText(), senhaTF1.getPassword(), emailTF.getText(), telefoneJFTF.getText());
 
 	}
